@@ -1,4 +1,6 @@
-﻿using KiddyShop.Data.EntityFramework;
+﻿using KiddyShop.Account;
+using KiddyShop.Account.Repositories;
+using KiddyShop.Data.EntityFramework;
 using KiddyShop.Domain;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,8 @@ namespace KiddyShop.Data.Repositories
     {
         private IDbFactory _dbFactory;
         private IKSDataContext _dbContext;
+
+        private IAccountRepository _accountRepository;
         public UnitOfWork()
         {
             this._dbFactory = new DbFactory();
@@ -27,7 +31,7 @@ namespace KiddyShop.Data.Repositories
         {
             return _dbContext.SaveChanges();
         }
-
+        public IAccountRepository AccountRepository => _accountRepository ?? (_accountRepository = new AccountRepository(_dbContext));
         public void Dispose()
         {
             Dispose(true);
@@ -41,7 +45,7 @@ namespace KiddyShop.Data.Repositories
             _dbContext = null;
 
             //_profileRepository = null;
-            //_accountRepository = null;
+            _accountRepository = null;
             //_teacherRepository = null;
 
             //_classGroupRepository = null;

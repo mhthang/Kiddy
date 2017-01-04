@@ -61,6 +61,7 @@
     <Compile Include="EntityFramework\KSDataContext.cs" />
     <Compile Include="EntityFramework\SCDataEntityFrameworkAutoFacModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Account\AccountRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SKRepositoryAutoFacModule.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />

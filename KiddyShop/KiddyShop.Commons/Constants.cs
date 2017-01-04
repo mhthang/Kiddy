@@ -10,7 +10,7 @@ namespace KiddyShop.Commons
     {
         public static int DAY_OF_WEEK = 7;
 
-        public const string ENTITY_FRAMEWORK_CONNECTION_STRING = "SCDbContext";
+        public const string ENTITY_FRAMEWORK_CONNECTION_STRING = "KSDbContext";
         public static string COOKIE_PATH = "";
         public static string CONFIGURATION_AUDIENCE_SECRET = ConfigurationManager.AppSettings["as:AudienceSecret"];
         public static string CONFIGURATION_AUDIENCE_ID = ConfigurationManager.AppSettings["as:AudienceId"];
