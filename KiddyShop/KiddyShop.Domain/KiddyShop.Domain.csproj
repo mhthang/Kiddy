@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Account\IAccountRepository.cs" />
     <Compile Include="Account\Models\Account.cs" />
+    <Compile Include="Account\Models\ProfileType.cs" />
     <Compile Include="Account\Models\UserType.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IRepository.cs" />

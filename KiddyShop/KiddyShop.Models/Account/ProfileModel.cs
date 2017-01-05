@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace KiddyShop.Account.Models
 {
-    public enum USER_TYPE
+    public class ProfileModel
     {
-        USER = 1,
-        STAFF = 2,
-        ADMIN = 3
     }
 }
