@@ -43,6 +43,10 @@
     <Compile Include="Account\AccountModel.cs" />
     <Compile Include="Account\ProfileModel.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Common\Pager.cs" />
+    <Compile Include="Common\SearchRequest.cs" />
+    <Compile Include="Common\SearchResponse.cs" />
+    <Compile Include="Common\UpdateForeignKeyRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
