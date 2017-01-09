@@ -1,4 +1,5 @@
 ﻿using KiddyShop.Domain;
+using KiddyShop.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -42,32 +43,32 @@ namespace KiddyShop.Data.EntityFramework
             return base.Set<TEntity>();
         }
 
-        //public TEntity Insert<TEntity>(TEntity entity) where TEntity : class
-        //{
-        //    var result = base.Set<TEntity>().Add(entity);
+        public TEntity Insert<TEntity>(TEntity entity) where TEntity : class
+        {
+            var result = base.Set<TEntity>().Add(entity);
 
-        //    var creationTrackingEntity = entity as IEntityTrackingCreation;
-        //    if (creationTrackingEntity != null)
-        //    {
-        //        creationTrackingEntity.DateCreated = DateTime.UtcNow;
-        //    }
+            var creationTrackingEntity = entity as IEntityTrackingCreation;
+            if (creationTrackingEntity != null)
+            {
+                creationTrackingEntity.DateCreated = DateTime.UtcNow;
+            }
 
-        //    //((IObjectState)entity).State = ObjectState.Added;
-        //    return result;
-        //}
+            //((IObjectState)entity).State = ObjectState.Added;
+            return result;
+        }
 
-        //public void Update<TEntity>(TEntity entity) where TEntity : class
-        //{
-        //    base.Set<TEntity>().Attach(entity);
+        public void Update<TEntity>(TEntity entity) where TEntity : class
+        {
+            base.Set<TEntity>().Attach(entity);
 
-        //    var modifyTrackingEntity = entity as IEntityTrackingModified;
-        //    if (modifyTrackingEntity != null)
-        //    {
-        //        modifyTrackingEntity.DateModified = DateTime.UtcNow;
-        //    }
+            var modifyTrackingEntity = entity as IEntityTrackingModified;
+            if (modifyTrackingEntity != null)
+            {
+                modifyTrackingEntity.DateModified = DateTime.UtcNow;
+            }
 
-        //    //((IObjectState)entity).State = ObjectState.Modified;
-        //}
+            //((IObjectState)entity).State = ObjectState.Modified;
+        }
 
         public void Update<TEntity, TKey>(TEntity entity, params Expression<Func<TEntity, object>>[] properties) where TEntity : class, IEntity<TKey>
         {

@@ -13,9 +13,9 @@ namespace KiddyShop.Data.EntityFramework
 
         IQueryable<TEntity> Get<TEntity>() where TEntity : class;
 
-        //TEntity Insert<TEntity>(TEntity entity) where TEntity : class;
+        TEntity Insert<TEntity>(TEntity entity) where TEntity : class;
 
-        //void Update<TEntity>(TEntity entity) where TEntity : class;
+        void Update<TEntity>(TEntity entity) where TEntity : class;
 
         void Update<TEntity, TPrimaryKey>(TEntity entity, params Expression<Func<TEntity, object>>[] properties) where TEntity : class, IEntity<TPrimaryKey>;
 

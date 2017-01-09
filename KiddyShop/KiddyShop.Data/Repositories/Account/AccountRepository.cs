@@ -1,12 +1,7 @@
-﻿using KiddyShop.Account;
-using KiddyShop.Data.EntityFramework;
+﻿using KiddyShop.Data.EntityFramework;
 using KiddyShop.Data.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KiddyShop.Account.Models;
 
 namespace KiddyShop.Account.Repositories
 {

@@ -13,6 +13,6 @@ namespace KiddyShop.Account
 
         void DeleteUserGroupByIdUserAndIdRoleGroup(string idUser, Guid idRoleGroup);
 
-        void CreateUserGroupBuIdUserAndIdRoleGroup(string idUser, Guid idRoleGroup);
+        void CreateUserGroupByIdUserAndIdRoleGroup(string idUser, Guid idRoleGroup);
     }
 }

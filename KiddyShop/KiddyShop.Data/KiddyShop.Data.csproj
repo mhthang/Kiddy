@@ -62,6 +62,10 @@
     <Compile Include="EntityFramework\SCDataEntityFrameworkAutoFacModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Account\AccountRepository.cs" />
+    <Compile Include="Repositories\Account\ProfileRepository.cs" />
+    <Compile Include="Repositories\Account\RoleGroupRepository.cs" />
+    <Compile Include="Repositories\Account\TeacherRepository.cs" />
+    <Compile Include="Repositories\Account\UserAttachmentRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SKRepositoryAutoFacModule.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
