@@ -1,7 +1,11 @@
 ﻿using KiddyShop.Account;
 using KiddyShop.Account.Repositories;
+using KiddyShop.Application;
+using KiddyShop.Application.Repositories;
 using KiddyShop.Data.EntityFramework;
 using KiddyShop.Domain;
+using KiddyShop.Messaging;
+using KiddyShop.Messaging.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +19,26 @@ namespace KiddyShop.Data.Repositories
         private IDbFactory _dbFactory;
         private IKSDataContext _dbContext;
 
+        private IAppClaimRepository _appClaimRepository;
+        private IAppFunctionRepository _appFunctionRepository;
+        private IRoleGroupRepository _roleGroupRepository;
+
+        private ICountryRepository _countryRepository;
+        private ITimezoneRepository _timezoneRepository;
+
+        private IUserAttachmentRepository _userAttachmentRepository;
+
+        private IProfileRepository _profileRepository;
         private IAccountRepository _accountRepository;
+        private ITeacherRepository _teacherRepository;
+
+
+        private IMessagingDataMappingRepository _messagingDataMappingRepository;
+        private IMessagingMessageRepository _messagingMessageRepository;
+        private IMessagingTemplateContentRepository _messagingTemplateContentRepository;
+        private IMessagingTemplateRepository _messagingTemplateRepository;
+        private IMessagingTypeRepository _messagingTypeRepository;
+
         public UnitOfWork()
         {
             this._dbFactory = new DbFactory();
@@ -31,7 +54,28 @@ namespace KiddyShop.Data.Repositories
         {
             return _dbContext.SaveChanges();
         }
+
+        public IAppClaimRepository AppClaimRepository => _appClaimRepository ?? (_appClaimRepository = new AppClaimRepository(_dbContext));
+        public IAppFunctionRepository AppFunctionRepository => _appFunctionRepository ?? (_appFunctionRepository = new AppFunctionRepository(_dbContext));
+        public IRoleGroupRepository RoleGroupRepository => _roleGroupRepository ?? (_roleGroupRepository = new RoleGroupRepository(_dbContext));
+
+        public ICountryRepository CountryRepository => _countryRepository ?? (_countryRepository = new CountryRepository(_dbContext));
+        public ITimezoneRepository TimezoneRepository => _timezoneRepository ?? (_timezoneRepository = new TimezoneRepository(_dbContext));
+
+        public IUserAttachmentRepository UserAttachmentRepository => _userAttachmentRepository ?? (_userAttachmentRepository = new UserAttachmentRepository(_dbContext));
+
+        public IProfileRepository ProfileRepository => _profileRepository ?? (_profileRepository = new ProfileRepository(_dbContext));
         public IAccountRepository AccountRepository => _accountRepository ?? (_accountRepository = new AccountRepository(_dbContext));
+        public ITeacherRepository TeacherRepository => _teacherRepository ?? (_teacherRepository = new TeacherRepository(_dbContext));
+
+
+        public IMessagingDataMappingRepository MessagingDataMappingRepository => _messagingDataMappingRepository ?? (_messagingDataMappingRepository = new MessagingDataMappingRepository(_dbContext));
+        public IMessagingMessageRepository MessagingMessageRepository => _messagingMessageRepository ?? (_messagingMessageRepository = new MessagingMessageRepository(_dbContext));
+        public IMessagingTemplateContentRepository MessagingTemplateContentRepository => _messagingTemplateContentRepository ?? (_messagingTemplateContentRepository = new MessagingTemplateContentRepository(_dbContext));
+        public IMessagingTemplateRepository MessagingTemplateRepository => _messagingTemplateRepository ?? (_messagingTemplateRepository = new MessagingTemplateRepository(_dbContext));
+        public IMessagingTypeRepository MessagingTypeRepository => _messagingTypeRepository ?? (_messagingTypeRepository = new MessagingTypeRepository(_dbContext));
+
+
         public void Dispose()
         {
             Dispose(true);
@@ -44,9 +88,9 @@ namespace KiddyShop.Data.Repositories
             _dbContext.Dispose();
             _dbContext = null;
 
-            //_profileRepository = null;
+            _profileRepository = null;
             _accountRepository = null;
-            //_teacherRepository = null;
+            _teacherRepository = null;
 
             //_classGroupRepository = null;
             //_classRoomRepository = null;
@@ -69,11 +113,11 @@ namespace KiddyShop.Data.Repositories
             //_courseSubjectRepository = null;
             //_trainingProgramRepository = null;
 
-            //_messagingDataMappingRepository = null;
-            //_messagingMessageRepository = null;
-            //_messagingTemplateContentRepository = null;
-            //_messagingTemplateRepository = null;
-            //_messagingTypeRepository = null;
+            _messagingDataMappingRepository = null;
+            _messagingMessageRepository = null;
+            _messagingTemplateContentRepository = null;
+            _messagingTemplateRepository = null;
+            _messagingTypeRepository = null;
         }
 
     }

@@ -66,6 +66,15 @@
     <Compile Include="Repositories\Account\RoleGroupRepository.cs" />
     <Compile Include="Repositories\Account\TeacherRepository.cs" />
     <Compile Include="Repositories\Account\UserAttachmentRepository.cs" />
+    <Compile Include="Repositories\Application\AppClaimRepository.cs" />
+    <Compile Include="Repositories\Application\AppFunctionRepository.cs" />
+    <Compile Include="Repositories\Application\CountryRepository.cs" />
+    <Compile Include="Repositories\Application\TimezoneRepository.cs" />
+    <Compile Include="Repositories\Messaging\MessagingDataMappingRepository.cs" />
+    <Compile Include="Repositories\Messaging\MessagingMessageRepository.cs" />
+    <Compile Include="Repositories\Messaging\MessagingTemplateContentRepository.cs" />
+    <Compile Include="Repositories\Messaging\MessagingTemplateRepository.cs" />
+    <Compile Include="Repositories\Messaging\MessagingTypeRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SKRepositoryAutoFacModule.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
