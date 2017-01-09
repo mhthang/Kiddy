@@ -42,14 +42,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\IAccountRepository.cs" />
+    <Compile Include="Account\IProfileRepository.cs" />
+    <Compile Include="Account\IRoleGroupRepository.cs" />
+    <Compile Include="Account\ITeacherRepository.cs" />
+    <Compile Include="Account\IUserAttachmentRepository.cs" />
     <Compile Include="Account\Models\Account.cs" />
+    <Compile Include="Account\Models\Client.cs" />
+    <Compile Include="Account\Models\CRM.cs" />
+    <Compile Include="Account\Models\Manager.cs" />
+    <Compile Include="Account\Models\Profile.cs" />
     <Compile Include="Account\Models\ProfileType.cs" />
+    <Compile Include="Account\Models\RoleGroup.cs" />
+    <Compile Include="Account\Models\Teacher.cs" />
+    <Compile Include="Account\Models\User.cs" />
+    <Compile Include="Account\Models\UserAttachment.cs" />
+    <Compile Include="Account\Models\UserGroup.cs" />
     <Compile Include="Account\Models\UserType.cs" />
+    <Compile Include="Application\IAppClaimRepository.cs" />
+    <Compile Include="Application\IAppFunctionRepository.cs" />
+    <Compile Include="Application\ICountryRepository.cs" />
+    <Compile Include="Application\ITimezoneRepository.cs" />
+    <Compile Include="Application\Models\AppClaim.cs" />
+    <Compile Include="Application\Models\AppFunction.cs" />
+    <Compile Include="Application\Models\AttachmentType.cs" />
+    <Compile Include="Application\Models\Country.cs" />
+    <Compile Include="Application\Models\Timezone.cs" />
+    <Compile Include="Common\ISpecification.cs" />
+    <Compile Include="Common\Models\EntityBase.cs" />
+    <Compile Include="Common\Models\ErrorExtraInfo.cs" />
+    <Compile Include="Common\Models\IEntityTrackingCreation.cs" />
+    <Compile Include="Common\Models\IEntityTrackingModified.cs" />
+    <Compile Include="Common\Models\IObjectState.cs" />
+    <Compile Include="Common\Models\ObjectState.cs" />
+    <Compile Include="Common\Models\PlatformException.cs" />
+    <Compile Include="Common\SpecificationBase.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Messaging\IMessagingDataMappingRepository.cs" />
+    <Compile Include="Messaging\IMessagingMessageRepository.cs" />
+    <Compile Include="Messaging\IMessagingTemplateContentRepository.cs" />
+    <Compile Include="Messaging\IMessagingTemplateRepository.cs" />
+    <Compile Include="Messaging\IMessagingTypeRepository.cs" />
+    <Compile Include="Messaging\Models\MessagingDataMapping.cs" />
+    <Compile Include="Messaging\Models\MessagingMessage.cs" />
+    <Compile Include="Messaging\Models\MessagingTemplate.cs" />
+    <Compile Include="Messaging\Models\MessagingTemplateContent.cs" />
+    <Compile Include="Messaging\Models\MessagingType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

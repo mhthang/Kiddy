@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KiddyShop.Account.Models
+﻿namespace KiddyShop.Account.Models
 {
-    public class PROFILE_TYPE
+    public enum PROFILE_TYPE
     {
+        CLIENT = 1,
+        CLIENT_ADMIN = 2,
+        TEACHER = 3,
+        STAFF = 4,
+        MANAGER = 5,
+        ADMIN = 6
     }
 }
