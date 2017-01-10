@@ -42,15 +42,17 @@
   <ItemGroup>
     <Compile Include="Account\AccountModel.cs" />
     <Compile Include="Account\ProfileModel.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Common\Pager.cs" />
     <Compile Include="Common\SearchRequest.cs" />
     <Compile Include="Common\SearchResponse.cs" />
     <Compile Include="Common\UpdateForeignKeyRequest.cs" />
+    <Compile Include="Messaging\GetMessageModel.cs" />
+    <Compile Include="Messaging\GetMessagingTemplateModel.cs" />
+    <Compile Include="Messaging\GetTemplateContentList.cs" />
+    <Compile Include="Messaging\MessagingMessageModel.cs" />
+    <Compile Include="Messaging\MessagingTemplateModel.cs" />
+    <Compile Include="Messaging\TemplateContentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KiddyShop.Domain\KiddyShop.Domain.csproj">
