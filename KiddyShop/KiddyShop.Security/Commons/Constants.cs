@@ -22,5 +22,7 @@ namespace KiddyShop.Security.Commons
         public const string LOGIN_SUCCESSFULLY = "Login successfully. Wait a seconds...";
         public const string LOGIN_INVALID_USERNAME_PASSWORD = "Username or Password is incorrect.";
         public const string CHANGE_PASSWORD_CONFIRM_FAIL = "Password does not match the confirm password.";
+        public const string CHANGE_PASSWORD_INVALID_NEWPASSWORD = "Password must contain: minimum 8 characters, upper case letter and numberic value.";
+        public const string CHANGE_PASSWORD_TOKEN_EXPIRED = "User does not exist or Access token has expired.";
     }
 }

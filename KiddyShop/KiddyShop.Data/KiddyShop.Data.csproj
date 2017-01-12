@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="EntityFramework\DateTimeKindAttribute.cs" />
     <Compile Include="EntityFramework\DbFactory.cs" />
     <Compile Include="EntityFramework\Disposable.cs" />

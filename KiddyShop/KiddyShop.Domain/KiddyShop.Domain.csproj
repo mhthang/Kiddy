@@ -66,6 +66,9 @@
     <Compile Include="Application\Models\AppFunction.cs" />
     <Compile Include="Application\Models\AttachmentType.cs" />
     <Compile Include="Application\Models\Country.cs" />
+    <Compile Include="Application\Models\Menu.cs" />
+    <Compile Include="Application\Models\MenuGroup.cs" />
+    <Compile Include="Application\Models\SystemConfig.cs" />
     <Compile Include="Application\Models\Timezone.cs" />
     <Compile Include="Common\ISpecification.cs" />
     <Compile Include="Common\Models\EntityBase.cs" />
@@ -76,6 +79,9 @@
     <Compile Include="Common\Models\ObjectState.cs" />
     <Compile Include="Common\Models\PlatformException.cs" />
     <Compile Include="Common\SpecificationBase.cs" />
+    <Compile Include="Community\Models\Post.cs" />
+    <Compile Include="Community\Models\PostCategory.cs" />
+    <Compile Include="Community\Models\Tag.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
@@ -91,7 +97,9 @@
     <Compile Include="Messaging\Models\MessagingType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="WebStore\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

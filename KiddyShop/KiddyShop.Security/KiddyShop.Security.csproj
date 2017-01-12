@@ -104,6 +104,17 @@
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Identity\ApplicationDbContext.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
+    <Compile Include="Models\ChangePassword.cs" />
+    <Compile Include="Models\ChangeProfile.cs" />
+    <Compile Include="Models\ClaimReturn.cs" />
+    <Compile Include="Models\ConfirmEmail.cs" />
+    <Compile Include="Models\ForgotPassword.cs" />
+    <Compile Include="Models\ModelFactory.cs" />
+    <Compile Include="Models\NewPassword.cs" />
+    <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\RoleReturn.cs" />
+    <Compile Include="Models\Signin.cs" />
+    <Compile Include="Models\UserReturn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\CustomJwtFormat.cs" />
     <Compile Include="Providers\CustomOAuthProviderToken.cs" />
@@ -113,14 +124,16 @@
     <Compile Include="WebSecurity\ApplicationUserManager.cs" />
     <Compile Include="WebSecurity\SecurityStartup.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KiddyShop.Commons\KiddyShop.Commons.csproj">
+      <Project>{6D9EE371-CE71-4C93-BE2F-1693B461C26B}</Project>
+      <Name>KiddyShop.Commons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KiddyShop.Domain\KiddyShop.Domain.csproj">
       <Project>{C93FF280-74F8-42BC-B7AF-B584C43118D4}</Project>
       <Name>KiddyShop.Domain</Name>

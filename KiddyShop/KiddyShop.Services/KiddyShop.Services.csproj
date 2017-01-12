@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +44,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="IBaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Account\" />
+    <Folder Include="Application\" />
+    <Folder Include="Email\" />
+    <Folder Include="Messaging\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KiddyShop.Commons\KiddyShop.Commons.csproj">
+      <Project>{6D9EE371-CE71-4C93-BE2F-1693B461C26B}</Project>
+      <Name>KiddyShop.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KiddyShop.Domain\KiddyShop.Domain.csproj">
+      <Project>{C93FF280-74F8-42BC-B7AF-B584C43118D4}</Project>
+      <Name>KiddyShop.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KiddyShop.Models\KiddyShop.Models.csproj">
+      <Project>{F99948D3-40C4-4412-8165-A7CA2FFFB2E4}</Project>
+      <Name>KiddyShop.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
