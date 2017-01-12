@@ -31,7 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\..\..\SchoolApp\StoneCastle.Security\bin\Debug\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,10 +46,20 @@
   <ItemGroup>
     <Compile Include="Account\AccountModel.cs" />
     <Compile Include="Account\ProfileModel.cs" />
+    <Compile Include="Application\CountryModel.cs" />
+    <Compile Include="Application\MenuGroupModel.cs" />
+    <Compile Include="Application\MenuModel.cs" />
+    <Compile Include="Application\SystemConfigModel.cs" />
+    <Compile Include="Application\TimezoneModel.cs" />
+    <Compile Include="Application\UserPhoto.cs" />
+    <Compile Include="Application\UserView.cs" />
     <Compile Include="Common\Pager.cs" />
     <Compile Include="Common\SearchRequest.cs" />
     <Compile Include="Common\SearchResponse.cs" />
     <Compile Include="Common\UpdateForeignKeyRequest.cs" />
+    <Compile Include="Community\PostCategoryModel.cs" />
+    <Compile Include="Community\PostModel.cs" />
+    <Compile Include="Community\TagModel.cs" />
     <Compile Include="Messaging\GetMessageModel.cs" />
     <Compile Include="Messaging\GetMessagingTemplateModel.cs" />
     <Compile Include="Messaging\GetTemplateContentList.cs" />

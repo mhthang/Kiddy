@@ -1,6 +1,6 @@
 ﻿using KiddyShop.Security.Identity;
 using KiddyShop.Security.WebSecurity;
-using StoneCastle.WebSecurity.Models;
+using KiddyShop.WebSecurity.Models;
 using System.Net.Http;
 using System.Web.Http.Routing;
 

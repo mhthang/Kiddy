@@ -22,7 +22,7 @@ namespace KiddyShop.Application.Models
         public int? DisplayOrder { get; set; }
 
         [Required]
-        public int GroupID { get; set; }
+        public System.Guid GroupID { get; set; }
 
         [ForeignKey("GroupID")]
         public virtual MenuGroup MenuGroup { get; set; }
