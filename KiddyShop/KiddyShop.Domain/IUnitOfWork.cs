@@ -1,5 +1,6 @@
 ﻿using KiddyShop.Account;
 using KiddyShop.Application;
+using KiddyShop.Community;
 using KiddyShop.Messaging;
 
 namespace KiddyShop.Domain
@@ -18,6 +19,8 @@ namespace KiddyShop.Domain
 
         IProfileRepository ProfileRepository { get; }
         IAccountRepository AccountRepository { get; }
+
+        IPostCategoryRepository PostCategoryRepository { get; }
 
         IMessagingDataMappingRepository MessagingDataMappingRepository { get; }
         IMessagingMessageRepository MessagingMessageRepository { get; }

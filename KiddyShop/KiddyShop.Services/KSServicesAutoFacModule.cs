@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using KiddyShop.Account.Services;
+using KiddyShop.Community.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace KiddyShop.Services
         {
             //builder.RegisterType<Application.Services.ApplicationService>().As<Application.Services.IApplicationService>();
 
-            builder.RegisterType<IAccountService>().As<IAccountService>();
+            builder.RegisterType<AccountService>().As<IAccountService>();
+            builder.RegisterType<PostCategoryService>().As<IPostCategoryService>();
             //builder.RegisterType<ProfileService>().As<IProfileService>();
             //builder.RegisterType<TeacherService>().As<ITeacherService>();
 

@@ -79,6 +79,7 @@
     <Compile Include="Common\Models\ObjectState.cs" />
     <Compile Include="Common\Models\PlatformException.cs" />
     <Compile Include="Common\SpecificationBase.cs" />
+    <Compile Include="Community\IPostCategoryRepository.cs" />
     <Compile Include="Community\Models\Post.cs" />
     <Compile Include="Community\Models\PostCategory.cs" />
     <Compile Include="Community\Models\Tag.cs" />

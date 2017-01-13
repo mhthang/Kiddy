@@ -1,4 +1,10 @@
 ﻿using Autofac;
+using KiddyShop.Account;
+using KiddyShop.Account.Repositories;
+using KiddyShop.Application;
+using KiddyShop.Application.Repositories;
+using KiddyShop.Community;
+using KiddyShop.Community.Repositories;
 using KiddyShop.Data.EntityFramework;
 using KiddyShop.Domain;
 
@@ -17,13 +23,13 @@ namespace KiddyShop.Data.Repositories
         {
             builder.Register(c => new KSDataContext(_connStr)).As<IKSDataContext>().InstancePerRequest();
 
-            //#region Application
-            //builder.RegisterType<CountryRepository>().As<ICountryRepository>();
-            //builder.RegisterType<TimezoneRepository>().As<ITimezoneRepository>();
+            #region Application
+            builder.RegisterType<CountryRepository>().As<ICountryRepository>();
+            builder.RegisterType<TimezoneRepository>().As<ITimezoneRepository>();
 
-            //builder.RegisterType<UserAttachmentRepository>().As<IUserAttachmentRepository>();
-            //builder.RegisterType<ProfileRepository>().As<IProfileRepository>();
-
+            builder.RegisterType<UserAttachmentRepository>().As<IUserAttachmentRepository>();
+            builder.RegisterType<ProfileRepository>().As<IProfileRepository>();
+            builder.RegisterType<PostCategoryRepository>().As<IPostCategoryRepository>();
             //builder.RegisterType<ClassGroupRepository>().As<IClassGroupRepository>();
             //builder.RegisterType<ClassRoomRepository>().As<IClassRoomRepository>();
             //builder.RegisterType<ClassCourseRepository>().As<IClassCourseRepository>();
@@ -50,7 +56,7 @@ namespace KiddyShop.Data.Repositories
 
             //builder.RegisterType<SchedulingTableRepository>().As<ISchedulingTableRepository>();
 
-            //#endregion
+            #endregion
 
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
         }

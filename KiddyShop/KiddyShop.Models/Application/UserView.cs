@@ -1,5 +1,4 @@
-﻿using Microsoft.IdentityModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,7 +13,7 @@ namespace KiddyShop.Application.Models
         public string Id { get; set; }
 
         [Required]
-        [EmailAddress(ErrorMessages = "Your email looks incorrect. Please check and try again.")]
+        [EmailAddress(ErrorMessage = "Your email looks incorrect. Please check and try again.")]
         [MinLength(8)]
         //[Index("UserNameIndex", IsUnique = true)]
         public string UserName { get; set; }

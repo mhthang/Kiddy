@@ -57,6 +57,8 @@
     <Compile Include="Account\AccountService.cs" />
     <Compile Include="Account\IAccountService.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="Community\IPostCategoryService.cs" />
+    <Compile Include="Community\PostCategoryService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="KSServicesAutoFacModule.cs" />
     <Compile Include="MappingHelper.cs" />
@@ -65,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
-    <Folder Include="Community\" />
     <Folder Include="Email\" />
     <Folder Include="Messaging\" />
   </ItemGroup>
@@ -88,6 +89,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

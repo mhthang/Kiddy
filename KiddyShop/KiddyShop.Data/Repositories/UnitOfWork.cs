@@ -1,6 +1,7 @@
 ﻿using KiddyShop.Account;
 using KiddyShop.Account.Repositories;
 using KiddyShop.Application;
+using KiddyShop.Community;
 using KiddyShop.Application.Repositories;
 using KiddyShop.Data.EntityFramework;
 using KiddyShop.Domain;
@@ -11,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KiddyShop.Community.Repositories;
 
 namespace KiddyShop.Data.Repositories
 {
@@ -32,6 +34,7 @@ namespace KiddyShop.Data.Repositories
         private IAccountRepository _accountRepository;
         private ITeacherRepository _teacherRepository;
 
+        private IPostCategoryRepository _postCategoryRepository;
 
         private IMessagingDataMappingRepository _messagingDataMappingRepository;
         private IMessagingMessageRepository _messagingMessageRepository;
@@ -67,7 +70,7 @@ namespace KiddyShop.Data.Repositories
         public IProfileRepository ProfileRepository => _profileRepository ?? (_profileRepository = new ProfileRepository(_dbContext));
         public IAccountRepository AccountRepository => _accountRepository ?? (_accountRepository = new AccountRepository(_dbContext));
         public ITeacherRepository TeacherRepository => _teacherRepository ?? (_teacherRepository = new TeacherRepository(_dbContext));
-
+        public IPostCategoryRepository PostCategoryRepository => _postCategoryRepository ?? (_postCategoryRepository = new PostCategoryRepository(_dbContext));
 
         public IMessagingDataMappingRepository MessagingDataMappingRepository => _messagingDataMappingRepository ?? (_messagingDataMappingRepository = new MessagingDataMappingRepository(_dbContext));
         public IMessagingMessageRepository MessagingMessageRepository => _messagingMessageRepository ?? (_messagingMessageRepository = new MessagingMessageRepository(_dbContext));
