@@ -1,0 +1,37 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation" ng-controller="NavigatorCtrl" ng-init="onload()">
+    <div class="sidebar-collapse" full-scroll>
+        <span close-off-canvas></span>
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element" dropdown>
+                    <h2 class="nav-logo-name">OCTOLIUM</h2>
+                    <a class="dropdown-toggle" ui-sref="home.dashboard">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">My Dashboard</strong>
+                            </span>
+                            <span class="text-muted text-xs block mtop_2">&nbsp;</span>
+                            <span class="text-muted text-xs block mtop_2">&nbsp;</span>
+                            <span class="text-muted text-xs block mtop_2">&nbsp;</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    <img alt="Aegona - Beyond Imagination" class="img-circle" src="Images/aegona-logo-small.png" />
+                </div>
+            </li>
+            <li class="activated">
+                <div class="p_title"><label class="media-middle"><span class="nav-label">{{ 'GENERAL_ORGS' | translate }}</span></label> <a class="area_touch pull-right r_ico" ng-click="createNewOrg()"> <span class="fa fa-plus-square-o"></span></a></div>
+            </li>
+            <li ng-class="{active: $state.includes('app.semester', {'orgid': org.Id})}" ng-repeat="org in Organizations.Records" ng-style="{'border-left-color': org.HighlightColor}">
+                <a class="r_ico area_animate wr_pj_left_db">
+                    <span class="nav-label nav-title">{{org.Name}}</span>
+                    <span class="fa fa-plus-square-o pull-right" ng-style="{'color':org.HighlightColor}" ng-show="org.IsActive" ng-click="createNewSemester(org.Id)"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('app.semester', {'orgid': org.Id})}" ng-repeat="model in org.Semesters">
+                    <li ui-sref-active="active"><a ui-sref="app.semester({'orgid': org.Id,'semid': model.Id})"><span class="nav-label">{{model.Name}}</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+<div id="wrapper" class="gray-bg {{$state.current.name}}">
+
+    <!-- Navigation -->
+    @Html.Partial("~/Views/Shared/Admin/_Navigation.cshtml")
+
+    <!-- Page wraper -->
+    <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+
+        <!-- Top Navbar -->
+        @Html.Partial("~/Views/Shared/Admin/_TopNavbar.cshtml")
+
+        <!-- Main view  -->
+        <div ui-view></div>
+
+        <!-- Footer -->
+        @Html.Partial("~/Views/Shared/Admin/_Footer.cshtml")
+
+    </div>
+    <!-- End page wrapper-->
+    <!-- Right Sidebar -->
+    @Html.Partial("~/Views/Shared/Admin/_RightSidebar.cshtml")
+
+</div>

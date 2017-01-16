@@ -1,0 +1,31 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading" ng-controller="AppNavigatorCtrl" ng-init="onload()">
+    <div class="col-lg-10">
+        <h2>{{Semester.Organization.Name}} <i class="fa fa-angle-right"></i> <a ui-sref="app.semester({'orgid': Semester.OrganizationId,'semid': Semester.Id})">{{Semester.Name}}</a></h2>
+        <ol class="breadcrumb">
+            <li ui-sref-active="active">
+                <a ui-sref="app.programs({'orgid': Semester.OrganizationId,'semid': Semester.Id})">Programs</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.rooms({'orgid': Semester.OrganizationId,'semid': Semester.Id})">Rooms</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.teachers({'orgid': Semester.OrganizationId,'semid': Semester.Id})">Teachers</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.classrooms({'orgid': Semester.OrganizationId,'semid': Semester.Id})">Classes</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.subjects({'orgid': Semester.OrganizationId,'semid': Semester.Id})">Subjects</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.classcourses({'orgid': Semester.OrganizationId,'semid': Semester.Id})">Roster</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.timetable({'orgid': Semester.OrganizationId,'semid': Semester.Id})">Timetable</a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
