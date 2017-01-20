@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace PGAPP.Utility
+namespace MobileApp.Utility
 {
     public class ConfigData
     {

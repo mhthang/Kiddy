@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using PGAPP.Business.DataModel;
-using PGAPP.Business.Logic;
-using PGAPP.Cache;
-using PGAPP.Models;
+//using PGAPP.Business.DataModel;
+//using PGAPP.Business.Logic;
+//using PGAPP.Cache;
+using MobileApp.Models;
 using System;
 using System.Data;
 using System.IO;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
-using TGDD.Logging.DataObjects;
-using static PGAPP.Utility.StaticData;
+//using TGDD.Logging.DataObjects;
+using static MobileApp.Utility.StaticData;
 
-namespace PGAPP.Utility
+namespace MobileApp.Utility
 {
     public class CommonFunctions
     {

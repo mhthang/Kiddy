@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PGAPP.Utility
+﻿namespace MobileApp.Utility
 {
     public class StaticData
     {
@@ -26,7 +20,7 @@ namespace PGAPP.Utility
         public const string BUNDLE_SCRIPT_APPLICATION = "~/SCRIPT_APPLICATION";
         public const string BUNDLE_SCRIPT_MAIN = "~/SCRIPT_MAIN";
 
-        #endregion
+        #endregion Bundles
 
         #region Environments
 
@@ -35,7 +29,7 @@ namespace PGAPP.Utility
         public const string ENVIRONMENT_RC = "RC";
         public const string ENVIRONMENT_LIVE = "Live";
 
-        #endregion
+        #endregion Environments
 
         public enum Platform
         {

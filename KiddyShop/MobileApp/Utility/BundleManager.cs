@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using PGAPP.Cache;
-using PGAPP.Models;
+//using PGAPP.Cache;
+using MobileApp.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Optimization;
 
-namespace PGAPP.Utility
+namespace MobileApp.Utility
 {
     public class BundleManager
     {
@@ -48,8 +48,8 @@ namespace PGAPP.Utility
         /// <returns></returns>
         private static int GetBundleVersion(string strBundleName)
         {
-            BundleVersionModel[] arrBundleVersion = GetBundleVersions();
-
+            //BundleVersionModel[] arrBundleVersion = GetBundleVersions(); //để tạm
+            BundleVersionModel[] arrBundleVersion = new BundleVersionModel[5];
             foreach (BundleVersionModel objBundleVersion in arrBundleVersion)
             {
                 if (objBundleVersion.Bundle == strBundleName)
@@ -65,23 +65,23 @@ namespace PGAPP.Utility
         /// Lấy toàn bộ bundle và phiên bản, có cache
         /// </summary>
         /// <returns></returns>
-        private static BundleVersionModel[] GetBundleVersions()
-        {
-            CacheManagerProvider<BundleVersionModel[]> objCacheManagerProvider = new CacheManagerProvider<BundleVersionModel[]>();
-            ICacheManager<BundleVersionModel[]> objCacheManager = objCacheManagerProvider.GetCacheManager();
-            BundleVersionModel[] arrBundleVersion = objCacheManager.Get(CacheKeyRepository.ALL_BUNDLE_VERSION);
+        //private static BundleVersionModel[] GetBundleVersions()
+        //{
+        //    CacheManagerProvider<BundleVersionModel[]> objCacheManagerProvider = new CacheManagerProvider<BundleVersionModel[]>();
+        //    ICacheManager<BundleVersionModel[]> objCacheManager = objCacheManagerProvider.GetCacheManager();
+        //    BundleVersionModel[] arrBundleVersion = objCacheManager.Get(CacheKeyRepository.ALL_BUNDLE_VERSION);
 
-            // Nếu lấy cache không có thì đọc file
-            if (arrBundleVersion == null)
-            {
-                string strVersionFileData = File.ReadAllText(HttpContext.Current.Server.MapPath("~/version.txt"));
+        //    // Nếu lấy cache không có thì đọc file
+        //    if (arrBundleVersion == null)
+        //    {
+        //        string strVersionFileData = File.ReadAllText(HttpContext.Current.Server.MapPath("~/version.txt"));
 
-                // File lưu kiểu JSON
-                arrBundleVersion = JsonConvert.DeserializeObject<BundleVersionModel[]>(strVersionFileData);
-                objCacheManager.Add(CacheKeyRepository.ALL_BUNDLE_VERSION, arrBundleVersion);
-            }
+        //        // File lưu kiểu JSON
+        //        arrBundleVersion = JsonConvert.DeserializeObject<BundleVersionModel[]>(strVersionFileData);
+        //        objCacheManager.Add(CacheKeyRepository.ALL_BUNDLE_VERSION, arrBundleVersion);
+        //    }
 
-            return arrBundleVersion;
-        }
+        //    return arrBundleVersion;
+        //}
     }
 }

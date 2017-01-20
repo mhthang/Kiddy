@@ -6,7 +6,7 @@ using System.IO;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
-namespace PGAPP.Utility
+namespace MobileApp.Utility
 {
     public class MaxLengthJsonValueProvider : ValueProviderFactory
     {

@@ -168,6 +168,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BundleVersionModel.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\BundleManager.cs" />
     <Compile Include="Utility\CommonFunctions.cs" />
@@ -455,7 +457,6 @@
     <Folder Include="Areas\Directive\Models\" />
     <Folder Include="Areas\MWG\Models\" />
     <Folder Include="Areas\MWG\Views\Shared\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
