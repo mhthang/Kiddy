@@ -1,0 +1,50 @@
+﻿<ion-view>
+    <ion-content>
+        <div class="standard-padding">
+            <loadingicon ng-show="model.isLoggingOut"></loadingicon>
+
+            <div ng-hide="global.account || model.isLoggingOut">
+                <div class="full-width-center-align">
+                    <img class="full-width" src="~/Content/Images/Logos/TGDD.png" />
+                </div>
+
+                <div class="list big-margin-top">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Số điện thoại" ng-model="model.phone" getfocus="model.focusPhone">
+                    </label>
+
+                    <label class="item item-input">
+                        <input type="password" placeholder="Mật khẩu" ng-model="model.password" getfocus="model.focusPassword">
+                    </label>
+                </div>
+
+                <loadingicon ng-show="model.isLoading"></loadingicon>
+
+                <div ng-hide="model.isLoading">
+                    <button class="button button-block button-positive center-vertical" ng-click="login()">
+                        Đăng nhập
+                    </button>
+
+                    <div ng-show="model.errorMessage" class="boxed-content-error center-align">
+                        {{model.errorMessage}}
+                    </div>
+                </div>
+
+                <div ng-hide="isLoadingPGGroupList" class="very-big-margin-top">
+                    <loadingicon ng-show="model.isLoadingPGGroupList"></loadingicon>
+
+                    <table class="default-table lightgray-border-table">
+                        <tr>
+                            <td ng-repeat="group in model.PGGroupList" width="{{100 / model.PGGroupList.length}}%">
+                                <img ng-src="~/Content/Images/Logos/PGGRoup_{{group.GroupID}}.png" class="full-width" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    @*<img ng-repeat="group in model.PGGroupList" ng-if="group.GroupID != 14"
+                        ng-src="~/Content/Images/Logos/PGGRoup_{{group.GroupID}}.png" class="login-pg-group-icon" />*@
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

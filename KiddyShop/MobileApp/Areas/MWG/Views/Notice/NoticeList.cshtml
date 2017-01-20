@@ -1,0 +1,75 @@
+﻿<ion-view>
+    @Html.Partial("~/Views/Common/ApplicationHeader.cshtml", "Thông báo")
+    @Html.Partial("~/Views/Common/MenuButton.cshtml", "yes")
+
+    <ion-content>
+        <loadingicon ng-show="model.isLoadingCategory"></loadingicon>
+
+        <div ng-hide="model.isLoadingCategory">
+            @*<div class="item item-input">
+                    <ui-select ng-model="model.selectedCategory" theme="bootstrap" title="Loại thông báo" class="full-width">
+                        <ui-select-match placeholder="Chọn loại thông báo" class="full-width">
+                            {{model.selectedCategory.NotifyCategoryName}}
+                        </ui-select-match>
+
+                        <ui-select-choices repeat="category in model.lstCategory | filterByAllProperty: {NotifyCategoryName: $select.search}">
+                            {{category.NotifyCategoryName}}
+                        </ui-select-choices>
+                    </ui-select>
+                </div>*@
+
+            <div class="standard-padding">
+                <table class="default-table">
+                    <tr>
+                        <td>
+                            <div class="list">
+                                <label class="item item-input">
+                                    <input type="text" placeholder="Nhập thông tin tìm kiếm" ng-model="model.keyword">
+                                </label>
+                            </div>
+                        </td>
+
+                        <td width="30px" class="right-align">
+                            <button ng-disabled="model.isSearching || model.isLoadingMore" class="button button-icon icon ion-search" ng-click="search()"></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <loadingicon ng-show="model.isSearching"></loadingicon>
+
+            <div ng-hide="model.isSearching">
+                <div class="standard-padding">
+                    <div ng-hide="model.noticeList.length > 0" class="boxed-content-info">
+                        Không tìm thấy thông báo
+                    </div>
+                </div>
+
+                <div ng-show="model.noticeList.length > 0">
+                    <div class="stable-bg sm-padding-top sm-padding-bottom">
+                        <div ng-repeat="notice in model.noticeList" ui-sref="app.noticedetail({id: notice.NotifyID})"
+                             ng-class="{'light-bg': true, 'standard-padding': true, 'sm-margin-top': $index > 0}">
+                            <h4 ng-class="{'positive': !notice.IsRead}">
+                                {{notice.Title}}
+                            </h4>
+
+                            {{notice.Fullname}}
+
+                            <span class="notice-list-item-date">
+                                {{notice.CreatedDateDisplay}}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="standard-padding">
+                        <loadingicon ng-show="model.isLoadingMore"></loadingicon>
+
+                        <button ng-hide="model.isLoadingMore || model.hideLoadMoreButton" class="button button-calm button-block" ng-click="loadMore()">
+                            Xem thêm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

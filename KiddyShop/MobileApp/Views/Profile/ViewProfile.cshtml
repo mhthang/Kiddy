@@ -1,0 +1,60 @@
+﻿<ion-view>
+    @Html.Partial("~/Views/Common/ApplicationHeader.cshtml", "Thông tin tài khoản")
+    @Html.Partial("~/Views/Common/MenuButton.cshtml")
+
+    <ion-content>
+        <div class="standard-padding">
+            <div class="full-width-center-align">
+                <loadingicon ng-show="model.isChangingAvatar"></loadingicon>
+
+                <div ng-hide="model.isChangingAvatar" class="center-align">
+                    <avatar ng-click="changeAvatar()" imagesize="150" roundimage="true"></avatar>
+
+                    <div ng-hide="model.showRotate">
+                        <table class="default-table">
+                            <tr>
+                                <td width="40%" class="center-align">
+                                    <span class="ion ion-ios-redo-outline rotate-negative-45 rotate-avatar-icon" ng-click="rotate(1)"></span>
+                                </td>
+
+                                <td width="20%" class="center-align">
+                                    <loadingicon ng-show="model.isRotating" icon="crescent"></loadingicon>
+                                </td>
+
+                                <td width="40%" class="center-align">
+                                    <span class="ion ion-ios-undo-outline rotate-45 rotate-avatar-icon" ng-click="rotate(2)"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <updownlink ng-show="global.account.ImagePath" linktext="Xoay hình" togglemodel="model.showRotate"></updownlink>
+                </div>
+
+                <h1 class="energized">
+                    {{global.account.FullName}}
+                </h1>
+            </div>
+
+            <div ng-show="global.account.PartnerName" class="big-margin-top">
+                Công ty tài chính: <b>{{global.account.PartnerName}}</b>
+            </div>
+
+            <div ng-show="global.account.StoreID" class="big-margin-top">
+                Siêu thị làm việc: <b>{{global.account.StoreID}} - {{global.account.StoreName}}</b>
+            </div>
+
+            <div class="big-margin-top">
+                Số điện thoại: <b>{{global.account.PhoneNumber}}</b>
+            </div>
+
+            <div ng-show="global.account.DateOfBirth && global.account.DateOfBirth.length > 0" class="big-margin-top">
+                Ngày sinh: <b>{{global.account.DateOfBirth}}</b>
+            </div>
+
+            <div class="calm big-margin-top" ui-sref="app.changepassword">
+                Đổi mật khẩu
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

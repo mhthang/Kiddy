@@ -1,0 +1,59 @@
+﻿<ion-view view-title="Chi tiết" ng-init="getdetail()">
+    <ion-nav-bar class="bar-stable main-header-nav home-page">
+        <ion-nav-back-button class="button-clear go-back"> </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content>
+        <div class="padding">
+            <h2 style="white-space: normal;">{{currItem.Title}}</h2>
+            <p>
+                <span>Ngày: {{currItem.CreatedDate|dateFormat }} </span>
+            </p>
+            <p>
+                <span>Ngành hàng: {{currItem.TypeCategoryName}} </span>
+            </p>
+            <h3>NỘI DUNG CHI TIẾT</h3>
+            <div class="divcontent" ng-bind-html="currItem.Content | trustHtml">
+            </div>
+        </div>
+
+        <div class="list padding">
+            <h5 class="titlerelate">{{currItem.LstComment.length>0?currItem.LstComment.length:''}} Bình luận</h5>
+            <form name="myForm">
+                <label class="item item-input">
+                    <textarea placeholder="Nhập nội dung" rows="3" ng-model="data.content"></textarea>
+                </label>
+                <div style="text-align:right;padding-top:10px">
+                    <button type="button" class="button button-positive small" ng-disabled="!data.content" ng-click="addcomment()">Gửi</button>
+                </div>
+            </form> 
+            <ul class="list">
+                <li ng-repeat="comment in currItem.LstComment | filter : FilterRootValue" style="margin-bottom: 15px;margin-top: 15px;">
+                    <p><strong>{{comment.Content}}</strong></p>
+                    <footer>
+                        <span><a ng-click="isShow=comment.CommentID"><i class="icon ion-reply"></i>Phản hồi</a></span>
+                        <span><i class="ion-ios-person-outline"> {{comment.CreatedUser}} </i></span>
+                        <span><i class="ion-ios-clock-outline"> {{comment.CreateDate | dateTimeFormat}}</i></span>
+                        <ul style="padding-left: 20px;" class="list" ng-show="(currItem.LstComment |filter:{ ParentID : comment.CommentID}).length > 0">
+                            <li ng-repeat="item in currItem.LstComment |filter:{ ParentID : comment.CommentID}" style="margin-bottom: 15px;margin-top: 15px;">
+                                <p><strong>{{item.Content}}</strong></p>
+                                <footer>
+                                    <span><i class="ion-ios-person-outline"> {{item.CreatedUser}} </i></span>
+                                    <span><i class="ion-ios-clock-outline"> {{item.CreateDate | dateTimeFormat}}</i></span>
+                                </footer>
+                            </li>
+                        </ul>
+                        <form name="myForm" ng-if="isShow==comment.CommentID">
+                            <label class="item item-input">
+                                <textarea placeholder="Nhập nội dung" rows="3" ng-model="reply.content"></textarea>
+                            </label>
+                            <div style="text-align:right;padding-top:10px">
+                                <button type="button" class="button button-positive small" ng-disabled="!reply.content" ng-click="addReply(comment.CommentID)">Gửi</button>
+                            </div>
+                        </form>
+                    </footer>
+                </li>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>

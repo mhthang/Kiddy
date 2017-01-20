@@ -1,0 +1,20 @@
+﻿<loading ng-show="model.isAddingComment"></loading>
+
+<div ng-hide="model.isAddingComment">
+    <table class="full-width no-padding">
+        <tr>
+            <td class="center-align center-vertical no-padding">
+                <div class="list">
+                    <label class="item item-input">
+                        <textarea ng-model="model.commentContent" class="input-comment-content" type="text" placeholder="Nhập nội dung bình luận..."
+                                  getfocus="focuscontent"></textarea>
+                    </label>
+                </div>
+            </td>
+
+            <td width="30px" class="right-align no-padding">
+                <span class="send-comment-icon ion ion-paper-airplane" ng-click="addComment()"> </span>
+            </td>
+        </tr>
+    </table>
+</div>

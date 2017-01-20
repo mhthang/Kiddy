@@ -1,0 +1,113 @@
+﻿<ion-view>
+    @Html.Partial("~/Views/Common/ApplicationHeader.cshtml", "Thông báo")
+    @Html.Partial("~/Views/Common/BackButton.cshtml", "yes")
+
+    <ion-content>
+        <loading ng-show="model.isLoading"></loading>
+
+        <div ng-hide="model.isLoading">
+            <div class="standard-padding">
+                <h2>
+                    {{model.notice.Title}}
+                </h2>
+
+                <span ng-click="scrollToComment()" class="calm view-comment-link">Xem bình luận <span class="ion ion-arrow-down-a"></span></span>
+
+                <br />
+
+                <div class="divcontent big-margin-top" ng-bind-html="model.notice.Content | trustHtml"></div>
+            </div>
+
+            <div class="stable-bg standard-padding big-margin-top">
+                <h3 class="balanced center-align">
+                    Bình luận
+                </h3>
+
+                <div ng-show="model.notice.LstComment">
+                    <div ng-repeat="comment in model.notice.LstComment" ng-hide="comment.ParentID" class="comment light-bg standard-padding">
+                        <table class="full-width no-padding">
+                            <tr>
+                                <td width="65px" class="comment-avatar">
+                                    <avatar imagesize="55" imagepath="{{comment.AvatarPath}}"></avatar>
+                                </td>
+
+                                <td class="comment-content">
+                                    <b>
+                                        {{comment.Fullname}}
+                                    </b>
+
+                                    - {{comment.GroupName}}
+
+                                    <br />
+
+                                    <div ng-show="global.account.PGGroupID == model.adminGroupID">
+                                        <phonelink phone="{{comment.Mobile}}"></phonelink>
+                                    </div>
+
+                                    {{comment.Content}}
+
+                                    <br />
+
+                                    <span class="comment-date">
+                                        {{comment.CreateDate | dateTimeFormat}}
+                                    </span>
+
+                                    <span class="calm show-add-sub-comment" ng-click="showHideAddComment(comment)">
+                                        Bình luận
+                                    </span>
+
+                                    <br />
+
+                                    <div class="sub-comment">
+                                        <div ng-repeat="subComment in model.notice.LstComment" ng-if="subComment.ParentID == comment.CommentID"
+                                             class="comment stable-bg sm-padding-top">
+                                            <div class="light-bg sm-padding-top">
+                                                <table class="default-table light-bg">
+                                                    <tr>
+                                                        <td width="45px" class="comment-avatar">
+                                                            <avatar imagesize="35" imagepath="{{subComment.AvatarPath}}"></avatar>
+                                                        </td>
+
+                                                        <td class="comment-content">
+                                                            <b>
+                                                                {{subComment.Fullname}}
+                                                            </b>
+
+                                                            - {{subComment.GroupName}}
+
+                                                            <br />
+
+                                                            <div ng-show="global.account.PGGroupID == model.adminGroupID">
+                                                                <phonelink phone="{{subComment.Mobile}}"></phonelink>
+                                                            </div>
+
+                                                            {{subComment.Content}}
+
+                                                            <br />
+
+                                                            <div class="comment-date">
+                                                                {{subComment.CreateDate | dateTimeFormat}}
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div ng-show="comment.showAddComment" class="stable-bg standard-padding">
+                            <addnoticecomment focuscontent="comment.focusAddComment" notice="model.notice" parentid="comment.CommentID"></addnoticecomment>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="energized-bg standard-padding">
+                    <addnoticecomment notice="model.notice" parentid="0" focuscontent="model.focusAddComment"></addnoticecomment>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

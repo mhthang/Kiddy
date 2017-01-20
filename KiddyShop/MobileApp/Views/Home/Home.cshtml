@@ -1,0 +1,22 @@
+﻿<ion-view>
+    @Html.Partial("~/Views/Common/ApplicationHeader.cshtml", "Trang chủ")
+    @Html.Partial("~/Views/Common/MenuButton.cshtml")
+
+    <ion-content>
+        <div class="standard-padding">
+            <loadingicon ng-show="global.isLoadingMenu"></loadingicon>
+
+            <div ng-hide="global.isLoadingMenu" class="view-content">
+                <div ng-repeat="menu in global.menuList" class="home-menu-container" ui-sref="{{menu.URL}}">
+                    <i class="{{menu.IconClass}} home-menu-icon"></i>
+
+                    <br />
+
+                    <div class="home-menu-text">
+                        {{menu.MenuName}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,40 @@
+﻿<ion-view view-title="Thông báo ngành hàng">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <div class="list">
+            <form name="myForm">
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input type="search" placeholder="Tìm kiếm" ng-model="data.strKeyword">
+                    </label>
+
+                    <button class="button button-icon icon ion-search" ng-click="search()"></button>
+                </div>
+            </form>
+        </div>
+
+        <loadingicon ng-show="data.isSearching"></loadingicon>
+
+        <div ng-hide="data.isSearching">
+            <div class="list" ng-repeat="item in lstPro">
+                <a class="item" ng-click="detail(item)">
+                    <h2 style="white-space: normal;">{{item.NotifyCategoryName}}-{{item.Title}}</h2>
+                    <p>
+                        <span>Ngày: {{item.CreatedDate | dateFormat }}</span>
+                    </p>
+                </a>
+            </div>
+
+            <loadingicon ng-show="data.isLoadingMore"></loadingicon>
+
+            <div ng-show="lstPro && !data.isLoadingMore" style="padding:20px;padding-bottom:5px;">
+                <button class="button button-positive button-block" ng-click="getmore()">
+                    Xem thêm
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

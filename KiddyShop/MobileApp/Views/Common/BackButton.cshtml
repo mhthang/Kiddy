@@ -1,0 +1,12 @@
+﻿@model string
+
+<ion-nav-bar class="bar-stable main-header-nav home-page">
+    <ion-nav-back-button class="button-clear go-back" side="left"></ion-nav-back-button>
+
+    @*@if (!string.IsNullOrEmpty(Model))
+    {
+        <ion-nav-buttons side="left">
+            <span class="ion ion-arrow-up-a button button-icon" ng-click="scrollToTop()"></span>
+        </ion-nav-buttons>
+    }*@
+</ion-nav-bar>

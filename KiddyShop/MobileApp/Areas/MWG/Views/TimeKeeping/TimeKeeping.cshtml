@@ -1,0 +1,114 @@
+﻿<ion-view>
+    @Html.Partial("~/Views/Common/ApplicationHeader.cshtml", "Chấm công")
+    @Html.Partial("~/Views/Common/MenuButton.cshtml")
+
+    <ion-content>
+        <div class="standard-padding">
+            <loadingicon ng-show="model.isLoadingStatus"></loadingicon>
+
+            <div ng-hide="model.isLoadingStatus">
+                <div ng-show="model.status">
+                    <div ng-show="model.status.CheckedIn" class="assertive center-align">
+                        Bạn đã chấm công hôm nay
+                    </div>
+
+                    <div ng-hide="model.status.CheckedIn">
+                        <div ng-hide="model.status.IsInWorkPlace" class="boxed-content-error">
+                            Bạn đang chấm công ngoài khu vực làm việc.
+
+                            <br />
+
+                            IP: {{model.status.IP}}.
+
+                            <br />
+
+                            Vui lòng sử dụng Wifi của siêu thị để chấm công.
+                        </div>
+
+                        <div ng-show="model.status.IsInWorkPlace">
+                            <loadingicon ng-show="model.isCheckingIn"></loadingicon>
+
+                            <button ng-hide="model.isCheckingIn" ng-click="checkIn()" class="button button-positive button-block">
+                                Chấm công
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="big-margin-top">
+                <updownlink linktext="Xem lịch sử chấm công" changetoggle="viewHistory()" togglemodel="model.showHistory"></updownlink>
+            </div>
+
+            <div ng-show="model.showHistory">
+                <loadingicon ng-show="model.isLoadingHistory"></loadingicon>
+
+                <div ng-hide="model.isLoadingHistory">
+                    <div ng-hide="model.historyList.length > 0 || model.isLoadingMore" class="boxed-content-info">
+                        Không tìm thấy lịch sử chấm công
+                    </div>
+
+                    <table ng-show="model.historyList.length > 0" class="default-table big-margin-top">
+                        <tr>
+                            <th width="20%">
+                                Ngày
+                            </th>
+
+                            <th width="60%">
+                                Siêu thị
+                            </th>
+
+                            <th width="20%">
+                                Giờ vào
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3">
+                                <div class="big-padding-top">
+                                    <div ng-repeat="history in model.historyList" ng-class="{'balance-bg': history.DayOfWeek == 1, 'stable-bg': history.DayOfWeek % 2 == 0}">
+                                        <table class="default-table white-border-table">
+                                            <tr>
+                                                <td width="20%" class="center-align">
+                                                    <div ng-class="{'balanced-bg': history.DayOfWeek == 1}">
+                                                        <div ng-show="history.DayOfWeek == 1">
+                                                            CN
+                                                        </div>
+
+                                                        <div ng-hide="history.DayOfWeek == 1">
+                                                            T{{history.DayOfWeek}}
+                                                        </div>
+
+                                                        <span>
+                                                            {{history.Date}}
+                                                        </span>
+                                                    </div>
+                                                </td>
+
+                                                <td width="60%">
+                                                    {{history.StoreName}}
+                                                </td>
+
+                                                <td width="20%" class="center-align">
+                                                    {{history.Time}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="sm-margin-top">
+                        <loadingicon ng-show="model.isLoadingMore"></loadingicon>
+
+                        <button ng-hide="model.isLoadingMore" ng-click="loadMore()" class="button button-calm button-block">
+                            Xem thêm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

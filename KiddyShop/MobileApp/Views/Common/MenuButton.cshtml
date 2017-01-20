@@ -1,0 +1,10 @@
+﻿@model string
+
+<ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+
+    @*@if (!string.IsNullOrEmpty(Model))
+    {
+        <span class="ion ion-arrow-up-a button button-icon" ng-click="scrollToTop()"></span>
+    }*@
+</ion-nav-buttons>
