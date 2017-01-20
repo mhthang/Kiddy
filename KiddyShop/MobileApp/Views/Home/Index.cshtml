@@ -1,0 +1,79 @@
+﻿@using PGAPP.Utility;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>
+        PGApp
+    </title>
+
+    @{
+        StaticData.Platform platForm = CommonFunctions.GetPlatform();
+
+        if (platForm == StaticData.Platform.iOS)
+        {
+            if (ConfigData.Environment == StaticData.ENVIRONMENT_LIVE || ConfigData.Environment == StaticData.ENVIRONMENT_RC)
+            {
+                @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_IOS))
+            }
+            else
+            {
+                @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_IOS)
+            }
+        }
+        else if (platForm == StaticData.Platform.Android)
+        {
+            if (ConfigData.Environment == StaticData.ENVIRONMENT_LIVE || ConfigData.Environment == StaticData.ENVIRONMENT_RC)
+            {
+                @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_ANDROID))
+            }
+            else
+            {
+                @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_ANDROID)
+            }
+        }
+
+        if (ConfigData.Environment == StaticData.ENVIRONMENT_LIVE || ConfigData.Environment == StaticData.ENVIRONMENT_RC)
+        {
+            @:@Html.Raw(BundleManager.GetVersionedCSSBundle(StaticData.BUNDLE_CSS_IONIC))
+            @:@Html.Raw(BundleManager.GetVersionedCSSBundle(StaticData.BUNDLE_CSS_COMPONENT))
+            @:@Html.Raw(BundleManager.GetVersionedCSSBundle(StaticData.BUNDLE_CSS_MAIN))
+
+            @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_CONFIG))
+            @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_CORE))
+            @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_IONIC))
+            @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_ANGULAR))
+            @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_COMPONENT))
+            @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_APPLICATION))
+            @:@Html.Raw(BundleManager.GetVersionedScriptBundle(StaticData.BUNDLE_SCRIPT_MAIN))
+        }
+        else
+        {
+            @:@Styles.Render(StaticData.BUNDLE_CSS_IONIC)
+            @:@Styles.Render(StaticData.BUNDLE_CSS_COMPONENT)
+            @:@Styles.Render(StaticData.BUNDLE_CSS_MAIN)
+
+            @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_CONFIG)
+            @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_CORE)
+            @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_IONIC)
+            @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_ANGULAR)
+            @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_COMPONENT)
+            @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_APPLICATION)
+            @:@Scripts.Render(StaticData.BUNDLE_SCRIPT_MAIN)
+        }
+    }
+</head>
+
+<body ng-app="pgapp">
+    <div ng-show="global.isChangingPage" class="app-content-loading">
+        <div class="app-content-loading-spinner">
+            <ion-spinner icon="ripple"></ion-spinner>
+        </div>
+    </div>
+
+    <ion-nav-view></ion-nav-view>
+</body>
+</html>
