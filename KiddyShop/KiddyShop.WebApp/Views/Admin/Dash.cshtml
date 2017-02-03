@@ -1,0 +1,54 @@
+﻿<div class="row wrapper wrapper-content animated fadeInRight" ng-init="onload()">
+    <div class="col-sm-12">
+        <h2>{{ 'WELCOME' | translate }}</h2>
+        <small>{{ 'MESSAGEINFO' | translate }}</small>
+        <p>&nbsp;</p>
+    </div>
+    <div class="col-sm-12">
+        <div class="nav nav-tabs">
+            <span class="pull-right"><button class="btn btn-white" ng-click="onsearch()">{{SearchResponse.Total}} <i class="fa fa-refresh"></i> </button></span>
+            <form ng-submit="onsearch()" role="form" class="form-inline" style="padding-bottom:3px;">
+                <div class="form-group">
+                    <label for="searchText" class="sr-only">Text</label>
+                    <input type="text" placeholder="Enter text" ng-model="SearchRequest.FilterText" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="searchGroup" class="sr-only">Group</label>
+                    <select class="form-control" ng-model="SearchRequest.FilterId" if="searchGroup" ng-options="item.Id as item.Name for item in SemesterOrganizations">
+                        <option value="" selected="selected">All</option>
+                    </select>
+                </div>
+                <button class="btn btn-white" type="submit"><i class="fa fa-search"></i> </button>
+            </form>
+        </div>
+        <p>&nbsp;</p>
+        <ngspinner name="spinner_home_dashboard" show="IsLoading"></ngspinner>
+    </div>
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-md-3" ng-repeat="item in SearchResponse.Records">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+                        <div class="product-imitation">
+                            [ INFO ]
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price" ng-style="{'background-color':item.HighlightColor}">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </span>
+                            <small class="text-muted">{{item.OrganizationName}}</small>
+                            <a href="#" class="product-name">{{item.Name}}</a>
+
+                            <div class="small m-t-xs">
+                                Many desktop publishing packages and web page editors now.
+                            </div>
+                            <div class="m-t text-righ">
+                                <a href="#" class="btn btn-xs btn-primary" ui-sref="app.semester({'orgid': item.OrganizationId,'semid': item.Id})">Open <i class="fa fa-long-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

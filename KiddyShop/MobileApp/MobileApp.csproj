@@ -158,12 +158,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Directive\Controllers\AddNoticeCommentController.cs" />
-    <Compile Include="Areas\Directive\Controllers\ClientOnlyController.cs" />
-    <Compile Include="Areas\Directive\DirectiveAreaRegistration.cs" />
-    <Compile Include="Areas\MWG\Controllers\NoticeController.cs" />
-    <Compile Include="Areas\MWG\Controllers\TimeKeepingController.cs" />
-    <Compile Include="Areas\MWG\MWGAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -178,21 +172,6 @@
     <Compile Include="Utility\StaticData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Directive\Scripts\directives.js" />
-    <Content Include="Areas\Directive\Scripts\directives.min.js" />
-    <Content Include="Areas\Directive\Scripts\Directives\AddNoticeComment.js" />
-    <Content Include="Areas\Directive\Scripts\Directives\ClientOnly.js" />
-    <Content Include="Areas\Directive\Scripts\directive_factories.js" />
-    <Content Include="Areas\Directive\Scripts\directive_factories.min.js" />
-    <Content Include="Areas\Directive\Scripts\Factories\AddNoticeCommentFactory.js" />
-    <Content Include="Areas\MWG\Scripts\Controllers\NoticeController.js" />
-    <Content Include="Areas\MWG\Scripts\Controllers\TimeKeepingController.js" />
-    <Content Include="Areas\MWG\Scripts\Factories\NoticeFactory.js" />
-    <Content Include="Areas\MWG\Scripts\Factories\TimeKeepingFactory.js" />
-    <Content Include="Areas\MWG\Scripts\mwg_controllers.js" />
-    <Content Include="Areas\MWG\Scripts\mwg_controllers.min.js" />
-    <Content Include="Areas\MWG\Scripts\mwg_factories.js" />
-    <Content Include="Areas\MWG\Scripts\mwg_factories.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSS\Component\select.css" />
@@ -215,18 +194,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\Directive\Views\AddNoticeComment\AddNoticeComment.cshtml" />
-    <Content Include="Areas\Directive\Views\ClientOnly\Avatar.cshtml" />
-    <Content Include="Areas\Directive\Views\ClientOnly\LoadingIcon.cshtml" />
-    <Content Include="Areas\Directive\Views\ClientOnly\PhoneLink.cshtml" />
-    <Content Include="Areas\Directive\Views\ClientOnly\UpDownLink.cshtml" />
-    <Content Include="Areas\Directive\Views\web.config" />
-    <Content Include="Areas\MWG\Views\NoticeCategory\Notice.cshtml" />
-    <Content Include="Areas\MWG\Views\NoticeCategory\NoticeDetail.cshtml" />
-    <Content Include="Areas\MWG\Views\Notice\NoticeDetail.cshtml" />
-    <Content Include="Areas\MWG\Views\Notice\NoticeList.cshtml" />
-    <Content Include="Areas\MWG\Views\TimeKeeping\TimeKeeping.cshtml" />
-    <Content Include="Areas\MWG\Views\web.config" />
     <Content Include="Content\ionic\fonts\ionicons.eot" />
     <Content Include="Content\ionic\fonts\ionicons.ttf" />
     <Content Include="Content\ionic\fonts\ionicons.woff" />
@@ -454,9 +421,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Directive\Models\" />
-    <Folder Include="Areas\MWG\Models\" />
-    <Folder Include="Areas\MWG\Views\Shared\" />
+    <Folder Include="Areas\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

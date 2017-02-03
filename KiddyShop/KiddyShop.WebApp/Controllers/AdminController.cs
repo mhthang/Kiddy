@@ -6,9 +6,11 @@ using System.Web.Mvc;
 
 namespace KiddyShop.WebApp.Controllers
 {
+    [RoutePrefix("kdadmin")]
     public class AdminController : Controller
     {
         // GET: Admin
+        [Route("")]
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
@@ -36,5 +38,11 @@ namespace KiddyShop.WebApp.Controllers
 
             return View();
         }
+
+        public ActionResult Dash()
+        {
+            return View();
+        }
+
     }
 }

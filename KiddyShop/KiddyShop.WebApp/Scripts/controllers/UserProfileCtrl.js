@@ -26,7 +26,7 @@
     $scope.isPhotoChanged = false;
 
     $scope.loadUserProfile = function () {
-        $http.post(Constants.WebApi.Account.GetCurrentUserProfile, null).then(function (response) {
+        $http.post(Constants.WebApi.Account.GetCurrentUserProfile, {}).then(function (response) {
             // this callback will be called asynchronously
             // when the response is available
             $scope.ProfileModel = response.data;

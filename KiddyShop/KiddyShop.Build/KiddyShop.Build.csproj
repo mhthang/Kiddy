@@ -47,6 +47,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,10 +63,18 @@
     <Compile Include="Migrations\201701121027512_CreateDb.Designer.cs">
       <DependentUpon>201701121027512_CreateDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701240804368_InitUserAdmin.cs" />
+    <Compile Include="Migrations\201701240804368_InitUserAdmin.Designer.cs">
+      <DependentUpon>201701240804368_InitUserAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KiddyShop.Commons\KiddyShop.Commons.csproj">
+      <Project>{6d9ee371-ce71-4c93-be2f-1693b461c26b}</Project>
+      <Name>KiddyShop.Commons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KiddyShop.Domain\KiddyShop.Domain.csproj">
       <Project>{C93FF280-74F8-42BC-B7AF-B584C43118D4}</Project>
       <Name>KiddyShop.Domain</Name>
@@ -82,6 +91,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701121027512_CreateDb.resx">
       <DependentUpon>201701121027512_CreateDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701240804368_InitUserAdmin.resx">
+      <DependentUpon>201701240804368_InitUserAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,9 +2,9 @@
 function AuthInterceptorService($q, $location, $localStorage, $rootScope) {
 
     var authInterceptorServiceFactory = {};
-
+    debugger;
     var _request = function (config) {
-
+        debugger;
         config.headers = config.headers || {};
 
         var authData = $localStorage.authorizationData;
@@ -16,6 +16,7 @@ function AuthInterceptorService($q, $location, $localStorage, $rootScope) {
     }
 
     var _responseError = function (rejection) {
+        debugger;
         switch (rejection.status) {
             case 401:
                 $location.path('/login');

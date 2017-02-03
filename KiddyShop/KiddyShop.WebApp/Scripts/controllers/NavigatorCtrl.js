@@ -4,7 +4,7 @@
 
     $scope.onload = function ()
     {
-        loadOrganizations();
+        //loadOrganizations();
     }
 
     $scope.createNewOrg = function () {

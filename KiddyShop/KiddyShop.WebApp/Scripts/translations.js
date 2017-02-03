@@ -8,8 +8,8 @@ function config($translateProvider) {
         .translations('en', {
 
             // Define some custom text
-            BOTTOM_TEXT_COMPANY_NAME: 'Octolium.com',
-            BOTTOM_TEXT_COPY_RIGHT: '2016',
+            BOTTOM_TEXT_COMPANY_NAME: 'KiddyShop.com',
+            BOTTOM_TEXT_COPY_RIGHT: '2017',
 
             WELCOME: 'Welcome Amelia',
             MESSAGEINFO: 'You have 42 messages and 6 notifications.',
@@ -61,10 +61,10 @@ function config($translateProvider) {
         .translations('vn', {
 
             // Define some custom text
-            BOTTOM_TEXT_COMPANY_NAME: 'Octolium.com',
-            BOTTOM_TEXT_COPY_RIGHT: '2016',
+            BOTTOM_TEXT_COMPANY_NAME: 'KiddyShop.com',
+            BOTTOM_TEXT_COPY_RIGHT: '2017',
             WELCOME: 'Welcome Amelia',
-            MESSAGEINFO: 'You have 42 messages and 6 notifications.',
+            MESSAGEINFO: 'Bạn có 42 tin nhắn và 6 thông báo.',
             SEARCH: 'Tìm kiếm...',
 
             WORKING_TIME: 'Working Time',

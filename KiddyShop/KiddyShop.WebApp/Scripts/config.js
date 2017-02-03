@@ -32,13 +32,11 @@ function config($stateProvider, $urlRouterProvider, $httpProvider, $localStorage
         // Set to true if you want to see what and when is dynamically loaded
         debug: false
     });
-    
-
     $stateProvider
         .state('home', {
             abstract: true,
             url: "/home",
-            templateUrl: "Home/Dashboard",
+            templateUrl: "Admin/Dashboard",
         })
         .state('app', {
             abstract: true,
@@ -47,8 +45,8 @@ function config($stateProvider, $urlRouterProvider, $httpProvider, $localStorage
         })
         .state('home.dashboard', {
             url: "/dashboard",
-            templateUrl: "organization/dashboard",
-            controller: OrganizationHomeCtrl,
+            templateUrl: "Admin/dash",
+            
             data: { pageTitle: 'Dashboard' },
         })
         .state('home.org', {
@@ -212,6 +210,12 @@ function config($stateProvider, $urlRouterProvider, $httpProvider, $localStorage
             templateUrl: "/Account/Login",
             controller: AccountLoginCtrl,
             data: { pageTitle: 'Login', specialClass: 'gray-bg' }
+        })
+        .state('test', {
+            url: "/test",
+            templateUrl: "/Home/Index",
+            controller: AccountLoginCtrl,
+            data: { pageTitle: 'Test', specialClass: 'gray-bg' }
         })
         .state('register', {
             url: "/Account/Register",

@@ -16,6 +16,9 @@ namespace KiddyShop.Account.Models
 
         public System.Guid ProfileId { get; set; }
 
+        [ForeignKey("ProfileId")]
+        public virtual Profile Profile { get; set; }
+
         public bool IsActive { get; set; }
 
         public bool IsDeleted { get; set; }
