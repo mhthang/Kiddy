@@ -7,5 +7,8 @@ namespace KiddyShop.WebSecurity.Models
         [Required]
         [EmailAddress(ErrorMessage = "Your email looks incorrect. Please check and try again.")]
         public string Email { get; set; }
+
+        [Required]
+        public string CaptchaResponse { get; set; }
     }
 }

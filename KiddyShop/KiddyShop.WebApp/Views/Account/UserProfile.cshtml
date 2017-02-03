@@ -1,0 +1,107 @@
+﻿<div class="inmodal" ng-init="onload()">
+    <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="{{ 'GENERAL_PROFILE' | translate }}">
+            <md-content class="md-padding">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <img alt="{{ProfileModel.FullName}}" class="img-circle" ng-src="{{ProfileModel.AvatarPhoto}}" style="width:56px; height:56px;" />
+                    </div>
+                    <div class="col-sm-8">
+                        <form class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-12"><div class="form-group"><label>{{ 'GENERAL_EMAIL' | translate }}</label> <input type="text" ng-model="ProfileModel.Email" placeholder="{{ 'GENERAL_EMAIL' | translate }}" class="form-control" readonly></div></div>
+                            </div>
+                            <div class="row"><hr /></div>
+                            <div class="row">
+                                <div class="col-sm-6"><div class="form-group"><label>{{ 'GENERAL_FIRST_NAME' | translate }}</label> <input type="text" ng-model="ProfileModel.FirstName" placeholder="{{ 'GENERAL_FIRST_NAME' | translate }}" class="form-control"></div></div>
+                                <div class="col-sm-6"><div class="form-group"><label>{{ 'GENERAL_LAST_NAME' | translate }}</label> <input type="text" ng-model="ProfileModel.LastName" placeholder="{{ 'GENERAL_LAST_NAME' | translate }}" class="form-control"></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6"><div class="form-group"><label>{{ 'GENERAL_PHONE' | translate }}</label> <input type="text" ng-model="ProfileModel.Phone" placeholder="{{ 'GENERAL_PHONE' | translate }}" class="form-control"></div></div>
+                                <div class="col-sm-6"><div class="form-group"><label>{{ 'GENERAL_MOBILE' | translate }}</label> <input type="text" ng-model="ProfileModel.Mobile" placeholder="{{ 'GENERAL_MOBILE' | translate }}" class="form-control"></div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6"></div>
+                            </div>
+                            <div class="form-group">
+                                <label>{{ 'GENERAL_LANGUAGE' | translate }}</label>
+                                <select class="form-control" ng-model="ProfileModel.Lang" ng-options="lang.Code as lang.Text for lang in Langs"></select>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>{{ 'GENERAL_COUNTRY' | translate }}</label>
+                                        <select class="form-control" ng-model="ProfileModel.CountryCode" ng-options="country.CountryCode as country.CountryName for country in Countries"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>{{ 'GENERAL_TIMEZONE' | translate }}</label>
+                                        <select class="form-control" ng-model="ProfileModel.TimezoneCode" ng-options="timezone.TimezoneName as timezone.TimezoneName for timezone in TimeZones"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </md-content>
+        </md-tab>
+        <md-tab label="Avatar">
+            <md-content class="md-padding">
+                <form class="form-horizontal">
+                    <div ng-show="imageCropStep == 1">
+                        <img ng-src="{{ProfileModel.AvatarPhoto}}" />
+                        <br />
+                        <input type="file" name="fileInput" id="fileInput" onchange="angular.element(this).scope().fileChanged(event)" />
+                    </div>
+
+                    <div ng-show="imageCropStep == 2">
+                        <!-- <image-crop
+                        data-height="200" //shape's height
+                        data-width="150" //shape's width
+                        data-shape="square" //the shape.. square or circle
+                        data-step="imageCropStep"//scope variable that will contain the current step of the crop (1. Waiting for source image; 2. Image loaded, waiting for crop; 3. Crop done)
+                        src="imgSrc" //scope variable that will be the source image for the crop (may be a Blob or base64 string)
+                        data-result-blob="result" //scope variable that will contain the Blob information
+                        data-result="resultDataUrl" //scope variable that will contain the image's base64 string representation
+                        crop="initCrop" //scope variable that must be set to true when the image is ready to be cropped
+                        padding="250" //space, in pixels, rounding the shape
+                        max-size="1024" //max of the image, in pixels
+                        ></image-crop> -->
+                        <image-crop data-height="220"
+                                    data-width="220"
+                                    data-shape="circle"
+                                    data-step="imageCropStep"
+                                    src="imgSrc"
+                                    data-result="ProfileModel.AvatarPhoto"
+                                    data-result-blob="resultBlob"
+                                    crop="initCrop"
+                                    padding="80"
+                                    max-size="1024"></image-crop>
+                    </div>
+
+                    <div ng-show="imageCropStep == 2">
+                        <br />
+                        <button ng-click="clear()">Cancel</button>
+                        <button ng-click="initCrop = true">Crop</button>
+                    </div>
+
+                    <div ng-show="imageCropStep == 3">
+                        <img ng-src="{{ProfileModel.AvatarPhoto}}"></img>
+                        <button ng-click="clear()">Clear</button>
+                    </div>
+                </form>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+    <div class="modal-footer">
+        <div class="col-sm-2 col-xs-3">
+        </div>
+        <div class="col-sm-10 col-xs-9">
+            <button type="button" class="btn btn-primary" ng-click="saveProfile()">{{ 'GENERAL_SAVE' | translate }}</button>
+            <button type="button" class="btn btn-white" ng-click="cancel()">{{ 'GENERAL_CLOSE' | translate }}</button>
+        </div>
+    </div>
+</div>
+
+

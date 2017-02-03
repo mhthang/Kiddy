@@ -61,16 +61,23 @@
     <Compile Include="BaseService.cs" />
     <Compile Include="Community\IPostCategoryService.cs" />
     <Compile Include="Community\PostCategoryService.cs" />
+    <Compile Include="Email\EmailServiceBase.cs" />
+    <Compile Include="Email\IEmailService.cs" />
+    <Compile Include="Email\ISendMailProvider.cs" />
+    <Compile Include="Email\IWorkingEmailService.cs" />
+    <Compile Include="Email\WorkingEmailService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="KSServicesAutoFacModule.cs" />
     <Compile Include="MappingHelper.cs" />
+    <Compile Include="Messaging\IMessagingDatabindingHelperService.cs" />
+    <Compile Include="Messaging\IMessagingMessageService.cs" />
+    <Compile Include="Messaging\MessagingDatabindingHelperService.cs" />
+    <Compile Include="Messaging\MessagingMessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="KSLog4NetAutofacModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
-    <Folder Include="Email\" />
-    <Folder Include="Messaging\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KiddyShop.Commons\KiddyShop.Commons.csproj">

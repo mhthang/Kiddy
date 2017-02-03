@@ -40,5 +40,7 @@ namespace KiddyShop.WebSecurity.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "Your password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public string CaptchaResponse { get; set; }
     }
 }

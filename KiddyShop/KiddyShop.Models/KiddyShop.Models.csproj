@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Account\AccountModel.cs" />
     <Compile Include="Account\ProfileModel.cs" />
+    <Compile Include="Account\UserProfileModel.cs" />
     <Compile Include="Application\CountryModel.cs" />
     <Compile Include="Application\MenuGroupModel.cs" />
     <Compile Include="Application\MenuModel.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Messaging\MessagingTemplateModel.cs" />
     <Compile Include="Messaging\TemplateContentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\RoleGroupViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KiddyShop.Domain\KiddyShop.Domain.csproj">

@@ -1,4 +1,5 @@
 ﻿using KiddyShop.Common.Models;
+using KiddyShop.Models.Account;
 using KiddyShop.Services;
 using KiddyShop.WebSecurity.Models;
 using System;
@@ -13,7 +14,7 @@ namespace KiddyShop.Account.Services
     {
         bool CreateAccountProfileForUser(String userId);
 
-        //SearchResponse<UserProfileModel> SearchUserProfile(SearchRequest request);
+        SearchResponse<UserProfileModel> SearchUserProfile(SearchRequest request);
 
         Object LoginReturnToken(Signin model);
 

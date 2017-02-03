@@ -18,5 +18,8 @@ namespace KiddyShop.WebSecurity.Models
 
         [Required(AllowEmptyStrings = false)]
         public string Code { get; set; }
+
+        [Required]
+        public string CaptchaResponse { get; set; }
     }
 }

@@ -14,5 +14,7 @@ namespace KiddyShop.Common.Models
         public DateTime? FromDate { get; set; }
         public DateTime? EndDate { get; set; }
         public Pager Pager { get; set; }
+
+        public string Tag { get; set; }
     }
 }

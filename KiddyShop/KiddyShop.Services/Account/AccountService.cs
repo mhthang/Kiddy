@@ -1,8 +1,12 @@
-﻿using KiddyShop.Domain;
+﻿using KiddyShop.Common.Models;
+using KiddyShop.Domain;
+using KiddyShop.Models.Account;
 using KiddyShop.Services;
 using KiddyShop.WebSecurity.Models;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 
@@ -12,7 +16,56 @@ namespace KiddyShop.Account.Services
     {
         public AccountService(IUnitOfWork unitOfWork) : base(unitOfWork)
         { }
+        public SearchResponse<UserProfileModel> SearchUserProfile(SearchRequest request)
+        {
+            if (request == null)
+                throw new System.ArgumentNullException("request");
 
+            if (request.Pager == null)
+                request.Pager = this.GetDefaultPager();
+
+            Logger.Debug($"Search: {request.FilterText}. UserType: ${request.FilterId}");
+
+            SearchResponse<UserProfileModel> response = new SearchResponse<UserProfileModel>();
+
+            int? userType = null;
+            if (!String.IsNullOrEmpty(request.Tag))
+                userType = int.Parse(request.Tag);
+
+            List<Models.Account> accounts = this.UnitOfWork.AccountRepository.SearchAccount(request.FilterText, userType, request.Pager.PageIndex - 1, request.Pager.PageSize);
+            response.Total = this.UnitOfWork.AccountRepository.CountAccount(request.FilterText, userType);
+
+            var userProfiles = accounts.Select(x => new UserProfileModel
+            {
+                Id = x.Profile.UserId,
+                FirstName = x.Profile.FirstName,
+                LastName = x.Profile.LastName,
+                Email = x.Profile.Email,
+                UserName = x.Profile.Email,
+                Phone = x.Profile.Phone,
+                ProfileId = x.ProfileId,
+                UserType = x.Profile.UserType,
+                ProfileType = x.Profile.ProfileType,
+                AvatarPhotoUrl = x.Profile.AvatarPhotoUrl
+            }).ToList();
+
+            foreach (UserProfileModel user in userProfiles)
+            {
+                try
+                {
+                    user.AvatarPhoto = this.UnitOfWork.UserAttachmentRepository.GetBase64UserAvatarPhoto(user.Id);
+                }
+                catch (InvalidOperationException ex)
+                {
+                    // do nothing
+                }
+            }
+
+            response.Records = userProfiles;
+            response.Pager = request.Pager;
+
+            return response;
+        }
         public bool CreateAccountProfileForUser(string userId)
         {
             try
