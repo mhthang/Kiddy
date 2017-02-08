@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="searchGroup" class="sr-only">Group</label>
                     <select class="form-control" ng-model="SearchRequest.FilterId" if="searchGroup" ng-options="item.Id as item.Name for item in SemesterOrganizations">
-                        <option value="" selected="selected">All</option>
+                        <option value="" selected="selected">{{'ALL' | translate}}</option>
                     </select>
                 </div>
                 <button class="btn btn-white" type="submit"><i class="fa fa-search"></i> </button>

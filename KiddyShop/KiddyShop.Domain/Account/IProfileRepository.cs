@@ -7,7 +7,7 @@ namespace KiddyShop.Account
     {
         Models.Profile GetUserProfile(string userId);
 
-        void UpdateUserProfile(Guid profileId, string firstName, string lastName, string lang, string countryCode, string timezoneCode, Models.USER_TYPE userType, Models.PROFILE_TYPE profileType);
+        void UpdateUserProfile(Guid profileId, string firstName, string lastName, string lang, string mobile, string phone, string countryCode, string timezoneCode, Models.USER_TYPE userType, Models.PROFILE_TYPE profileType);
 
         Models.User GetUserByUserId(string userId);
 

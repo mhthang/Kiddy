@@ -13,11 +13,11 @@ namespace KiddyShop.Services
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //builder.RegisterType<Application.Services.ApplicationService>().As<Application.Services.IApplicationService>();
+            builder.RegisterType<Application.Services.ApplicationService>().As<Application.Services.IApplicationService>();
 
             builder.RegisterType<AccountService>().As<IAccountService>();
             builder.RegisterType<PostCategoryService>().As<IPostCategoryService>();
-            //builder.RegisterType<ProfileService>().As<IProfileService>();
+            builder.RegisterType<ProfileService>().As<IProfileService>();
             //builder.RegisterType<TeacherService>().As<ITeacherService>();
 
             //builder.RegisterType<Organization.Services.DivisionService>().As<Organization.Services.IDivisionService>();
@@ -40,11 +40,11 @@ namespace KiddyShop.Services
 
             //builder.RegisterType<Schedule.Services.ScheduleService>().As<Schedule.Services.IScheduleService>();
 
-            //builder.RegisterType<Messaging.Services.MessagingMessageService>().As<Messaging.Services.IMessagingMessageService>();
-            //builder.RegisterType<Messaging.Services.MessagingDatabindingHelperService>().As<Messaging.Services.IMessagingDatabindingHelperService>();
+            builder.RegisterType<Messaging.Services.MessagingMessageService>().As<Messaging.Services.IMessagingMessageService>();
+            builder.RegisterType<Messaging.Services.MessagingDatabindingHelperService>().As<Messaging.Services.IMessagingDatabindingHelperService>();
 
-            //builder.RegisterType<Email.WorkingEmailService>().As<Email.IWorkingEmailService>();
-            //builder.RegisterType<Email.GmailProvider>().As<Email.ISendMailProvider>();
+            builder.RegisterType<Email.WorkingEmailService>().As<Email.IWorkingEmailService>();
+            builder.RegisterType<Email.GmailProvider>().As<Email.ISendMailProvider>();
 
             //builder.RegisterType<TimeSlotService>().As<ITimeSlotService>();
         }

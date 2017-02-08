@@ -23,6 +23,8 @@ namespace KiddyShop.WebApp
             bundles.Add(new ScriptBundle("~/bundles/controllers")
                     .IncludeDirectory("~/Scripts/controllers", "*.js")
                     .IncludeDirectory("~/Scripts/controllers/teacher", "*.js")
+                    .IncludeDirectory("~/Scripts/controllers/category", "*.js")
+                    .IncludeDirectory("~/Scripts/controllers/post", "*.js")
                     .IncludeDirectory("~/Scripts/controllers/division", "*.js")
                     .IncludeDirectory("~/Scripts/controllers/subject", "*.js")
                     .IncludeDirectory("~/Scripts/controllers/subjectgroup", "*.js")

@@ -66,7 +66,7 @@ namespace KiddyShop.Account.Repositories
             return profile;
         }
 
-        public void UpdateUserProfile(Guid profileId, string firstName, string lastName, string lang, string countryCode, string timezoneCode, USER_TYPE userType, PROFILE_TYPE profileType)
+        public void UpdateUserProfile(Guid profileId, string firstName, string lastName, string lang, string mobile,string phone , string countryCode, string timezoneCode, USER_TYPE userType, PROFILE_TYPE profileType)
         {
             if (profileId == null || profileId == Guid.Empty)
                 throw new ArgumentNullException("profileId");
@@ -82,6 +82,8 @@ namespace KiddyShop.Account.Repositories
             profile.CountryCode = countryCode;
             profile.TimezoneCode = timezoneCode;
             profile.UserType = userType;
+            profile.Mobile = mobile;
+            profile.Phone = phone;
             profile.ProfileType = profileType;
             this.DataContext.Update<Models.Profile, Guid>(profile, x => x.FirstName, x => x.LastName, x => x.Lang, x => x.CountryCode, x => x.TimezoneCode);
         }

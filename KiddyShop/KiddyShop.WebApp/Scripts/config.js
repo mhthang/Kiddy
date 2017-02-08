@@ -41,7 +41,7 @@ function config($stateProvider, $urlRouterProvider, $httpProvider, $localStorage
         .state('app', {
             abstract: true,
             url: "/app",
-            templateUrl: "Home/App",
+            templateUrl: "Admin/App",
         })
         .state('home.dashboard', {
             url: "/dashboard",
@@ -54,6 +54,16 @@ function config($stateProvider, $urlRouterProvider, $httpProvider, $localStorage
             templateUrl: "organization/list",
             controller: OrganizationListCtrl,
             data: { pageTitle: 'Organization' },
+        })
+        .state('app.categories', {
+            url: "/categories",
+            templateUrl: "category/list",
+            controller: CategoryListCtrl
+        })
+        .state('app.post', {
+            url: "/post",
+            templateUrl: "post/list",
+            controller: PostListCtrl
         })
         .state('app.semester', {
             url: "/semester/:orgid/:semid",

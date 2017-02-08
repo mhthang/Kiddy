@@ -11,9 +11,10 @@ function config($translateProvider) {
             BOTTOM_TEXT_COMPANY_NAME: 'KiddyShop.com',
             BOTTOM_TEXT_COPY_RIGHT: '2017',
 
-            WELCOME: 'Welcome Amelia',
+            WELCOME: 'Welcome KiddyShop',
             MESSAGEINFO: 'You have 42 messages and 6 notifications.',
             SEARCH: 'Search for something...',
+            ALL: 'All',
 
             WORKING_TIME: 'Working Time',
             WORKING_TIME_TEXT: 'Define working time',
@@ -49,6 +50,8 @@ function config($translateProvider) {
             GENERAL_PROFILETYPE: 'Profile Type',
             GENERAL_ROLETITLE: 'Role',
             GENERAL_AVATAR: 'AVATAR',
+            GENERAL_CATEGORY: 'Category',
+            GENERAL_CATEGORIES: 'Categories',
 
             REGISTER_TITLE: 'Shool Timetable',
             REGISTER_SUB_TITLE_2: 'Online',
@@ -63,10 +66,10 @@ function config($translateProvider) {
             // Define some custom text
             BOTTOM_TEXT_COMPANY_NAME: 'KiddyShop.com',
             BOTTOM_TEXT_COPY_RIGHT: '2017',
-            WELCOME: 'Welcome Amelia',
+            WELCOME: 'Welcome KiddyShop',
             MESSAGEINFO: 'Bạn có 42 tin nhắn và 6 thông báo.',
             SEARCH: 'Tìm kiếm...',
-
+            ALL: 'Tất cả',
             WORKING_TIME: 'Working Time',
             WORKING_TIME_TEXT: 'Define working time',
 
@@ -101,6 +104,8 @@ function config($translateProvider) {
             GENERAL_PROFILETYPE: 'Profile Type',
             GENERAL_ROLETITLE: 'Phân quyền',
             GENERAL_AVATAR: 'Ảnh đại diện',
+            GENERAL_CATEGORY: 'Danh mục',
+            GENERAL_CATEGORIES: 'Danh mục',
 
             REGISTER_TITLE: 'Thời Khóa Biểu',
             REGISTER_SUB_TITLE_2: 'Trực Tuyến',

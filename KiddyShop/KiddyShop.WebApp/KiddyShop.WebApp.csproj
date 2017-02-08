@@ -149,6 +149,11 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -169,10 +174,6 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
@@ -224,10 +225,15 @@
     <Compile Include="Controllers\AccountApiController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AppApiController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CategoryApiController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ComApiController.cs" />
+    <Compile Include="Controllers\ComController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -372,6 +378,7 @@
     <Content Include="Scripts\angular\angular.min.js.map" />
     <Content Include="Scripts\angular\errors.json" />
     <Content Include="Scripts\angular\version.json" />
+    <None Include="Properties\PublishProfiles\up.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\angular-bootstrap-checkbox.js" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
@@ -389,6 +396,7 @@
     <Content Include="Scripts\controllers\AppNavigatorCtrl.js" />
     <Content Include="Scripts\controllers\building\BuildingCtrl.js" />
     <Content Include="Scripts\controllers\building\BuildingListCtrl.js" />
+    <Content Include="Scripts\controllers\category\CategoryListCtrl.js" />
     <Content Include="Scripts\controllers\classcourse\ClassCourseCtrl.js" />
     <Content Include="Scripts\controllers\classcourse\ClassCourseListCtrl.js" />
     <Content Include="Scripts\controllers\classgroup\ClassGroupCtrl.js" />
@@ -421,6 +429,7 @@
     <Content Include="Scripts\controllers\organization\OrgnizationCtrl.js" />
     <Content Include="Scripts\controllers\organization\OrgnizationHomeCtrl.js" />
     <Content Include="Scripts\controllers\organization\OrgnizationListCtrl.js" />
+    <Content Include="Scripts\controllers\post\PostListCtrl.js" />
     <Content Include="Scripts\controllers\products\ProductsCtrl.js" />
     <Content Include="Scripts\controllers\program\ProgramClassCtrl.js" />
     <Content Include="Scripts\controllers\program\ProgramCourseCtrl.js" />
@@ -1108,13 +1117,14 @@
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Account\NewPassword.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Category\List.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Post\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Base\" />
-    <Folder Include="Views\ComApi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -160,6 +160,12 @@ var Constants = (function () {
             Search: rootApiUrl + '/OrganizationApi/SearchBuilding',
             CreateOrUpdate: rootApiUrl + '/OrganizationApi/CreateOrUpdateBuilding',
         },
+        Category: {
+            Get: rootApiUrl + '/OrganizationApi/GetBuilding',
+            GetSemesterBuilding: rootApiUrl + '/OrganizationApi/GetSemesterBuilding',
+            Search: rootApiUrl + '/ComApi/SearchPostCategory',
+            CreateOrUpdate: rootApiUrl + '/OrganizationApi/CreateOrUpdateBuilding',
+        },
         Messaging: {
             SendTestEmail: rootApiUrl + '/MessagingApi/sendTestEmail',
             GetMessagingContent: rootApiUrl + '/MessagingApi/getMessagingContent',

@@ -8,7 +8,7 @@
                     <a class="dropdown-toggle" ui-sref="home.dashboard">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">My Dashboard</strong>
+                                <strong class="font-bold">{{'GENERAL_MY_DASHBOARD' | translate}}</strong>
                             </span>
                             <span class="text-muted text-xs block mtop_2">&nbsp;</span>
                             <span class="text-muted text-xs block mtop_2">&nbsp;</span>
@@ -19,6 +19,12 @@
                 <div class="logo-element">
                     <img alt="Aegona - Beyond Imagination" class="img-circle" src="Images/aegona-logo-small.png" />
                 </div>
+            </li>
+            <li class="activated">
+                <div class="p_title"><label class="media-middle"><a ui-sref="app.categories"><span class="nav-label">{{'GENERAL_CATEGORIES' | translate}}</span></a></label></div>
+            </li>
+            <li class="activated">
+                <div class="p_title"><label class="media-middle"><a ui-sref="app.post"><span class="nav-label">Post</span></a></label></div>
             </li>
             <li class="activated">
                 <div class="p_title"><label class="media-middle"><span class="nav-label">{{ 'GENERAL_ORGS' | translate }}</span></label> <a class="area_touch pull-right r_ico" ng-click="createNewOrg()"> <span class="fa fa-plus-square-o"></span></a></div>

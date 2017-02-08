@@ -51,7 +51,7 @@ namespace KiddyShop.Account.Services
 
             Logger.Info($"ProfileId: {model.Id}");
 
-            this.UnitOfWork.ProfileRepository.UpdateUserProfile(model.Id, model.FirstName, model.LastName, model.Lang, model.CountryCode, model.TimezoneCode, (Models.USER_TYPE)model.UserType, (Models.PROFILE_TYPE)model.ProfileType);
+            this.UnitOfWork.ProfileRepository.UpdateUserProfile(model.Id, model.FirstName, model.LastName, model.Lang, model.Mobile,model.Phone , model.CountryCode, model.TimezoneCode, (Models.USER_TYPE)model.UserType, (Models.PROFILE_TYPE)model.ProfileType);
             this.UnitOfWork.SaveChanges();
         }
 

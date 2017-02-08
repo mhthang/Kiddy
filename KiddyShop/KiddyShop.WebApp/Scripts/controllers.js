@@ -100,7 +100,7 @@ angular
     .controller('Timetable2ClassViewCtrl', Timetable2ClassViewCtrl)   
     .controller('TimetableModificationCtrl', TimetableModificationCtrl)   
     .controller('AccountLoginCtrl', AccountLoginCtrl)
-    //.controller('AccountRegisterCtrl', AccountRegisterCtrl)
+    .controller('PostListCtrl', PostListCtrl)
     .controller('AccountForgotPasswordCtrl', AccountForgotPasswordCtrl)
     .controller('AccountChangePasswordCtrl', AccountChangePasswordCtrl)
     .controller('AccountNewPasswordCtrl', AccountNewPasswordCtrl)
@@ -112,6 +112,8 @@ angular
     .controller('MessagingTemplateListCtrl', MessagingTemplateListCtrl)
     .controller('MessagingTemplateViewCtrl', MessagingTemplateViewCtrl)
     .controller('UserListCtrl', UserListCtrl)
-    .controller('UserDetailCtrl', UserDetailCtrl);
+    .controller('UserDetailCtrl', UserDetailCtrl)
+    .controller('CategoryListCtrl', CategoryListCtrl);
+
 
 

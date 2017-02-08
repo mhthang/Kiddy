@@ -1,0 +1,67 @@
+﻿<div class="inmodal" ng-init="onload()">
+    <form class="form-horizontal" ng-submit="save()">
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Training Center">
+                <md-content class="md-padding">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="text" class="form-control" ng-model="Model.Name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="text" class="form-control" ng-model="Model.LogoUrl" placeholder="Logo URL">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <input icheck type="checkbox" ng-model="Model.IsActive"><i></i> Active
+                        </div>
+                        <div class="col-xs-6">
+                        </div>
+                    </div>
+                </md-content>
+            </md-tab>
+            <md-tab label="Activity">
+                <md-content class="md-padding">
+                    <div class="full-height-scroll" full-scroll>
+                        <strong>Last activity</strong>
+                        <ul class="list-group clear-list">
+                            <li class="list-group-item fist-item">
+                                <span class="pull-right"> 09:00 pm </span>
+                                Please contact me
+                            </li>
+                            <li class="list-group-item">
+                                <span class="pull-right"> 10:16 am </span>
+                                Sign a contract
+                            </li>
+                            <li class="list-group-item">
+                                <span class="pull-right"> 08:22 pm </span>
+                                Open new shop
+                            </li>
+                            <li class="list-group-item">
+                                <span class="pull-right"> 11:06 pm </span>
+                                Call back to Sylvia
+                            </li>
+                            <li class="list-group-item">
+                                <span class="pull-right"> 12:00 am </span>
+                                Write a letter to Sandra
+                            </li>
+                        </ul>
+                        <strong>Notes</strong>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-primary" ng-click="cancel()">Close</button>
+        </div>
+    </form>
+</div>
+
+

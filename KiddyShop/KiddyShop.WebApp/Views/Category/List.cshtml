@@ -1,0 +1,57 @@
+﻿<div class="row" ng-init="onload()">
+    <div class="col-sm-12">
+        <div class="ibox">
+            <div class="ibox-content">
+                @*<span class="text-muted small pull-right">Last modification: <i class="fa fa-clock-o"></i> 2:10 pm - 12.06.2014</span>*@
+                <span class="text-muted small pull-right">
+                    <button class="btn btn-white btn-sm" title="Add" ng-click="open(null)"><i class="fa fa-plus"></i></button>
+                    <button class="btn btn-white btn-sm" title="List"><i class="fa fa-list"></i></button>
+                    <button class="btn btn-white btn-sm" title="Org-chart"><i class="fa fa-cloud"></i></button>
+                </span>
+                <h2>Post Categories</h2>
+                <p>
+                    Orders are <strong>new</strong> will be display as <span style="color: green;">Green</span> color.
+                </p>
+                <div class="clients-list">
+                    <div class="nav nav-tabs">
+                        <span class="pull-right small text-muted">{{SearchResponse.Total}} records</span>
+                    </div>
+                    <div class="tab-content">
+                        <div class="full-height-scroll" full-scroll>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Alias</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="Model in SearchResponse.Records">
+                                            <td></td>
+                                            <td><a class="client-link" ui-sref="app.project.order({id:OrderDto.Id})">{{Model.Name}}</a></td>
+                                            <td>{{Model.Description}}</td>
+                                            <td>{{Model.Alias}}</td>
+                                            <td class="pull-right">
+                                                <button type="button" class="btn-circle btn-sm btn-white" ng-click="open(Model.Id)"> <i class="fa fa-pencil"></i> </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ngspinner name="sploading_admin_project_list" show="IsLoading"></ngspinner>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <button type="button" class="btn btn btn-primary" ng-click="loadMore();" ng-show="IsLoadMore"> <i class="fa fa-search"></i> Load More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
