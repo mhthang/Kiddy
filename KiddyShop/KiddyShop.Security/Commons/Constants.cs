@@ -9,7 +9,7 @@ namespace KiddyShop.Security.Commons
 {
     public static class Constants
     {
-        public static string ENTITY_FRAMEWORK_CONNECTION_STRING = "KSDbContext";
+        public static string ENTITY_FRAMEWORK_CONNECTION_STRING = "pintshir_Webstore";
         public static string COOKIE_PATH = "";
         public static string CONFIGURATION_AUDIENCE_ID = ConfigurationManager.AppSettings["as:AudienceId"];
         public static string CONFIGURATION_AUDIENCE_SECRET = ConfigurationManager.AppSettings["as:AudienceSecret"];

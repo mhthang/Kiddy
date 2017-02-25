@@ -1,0 +1,291 @@
+﻿
+.logo-name {
+    color: #e6e6e6;
+    font-size: 62px;
+    margin-bottom: 0px;
+}
+
+.nav-logo-name {
+    color: #e6e6e6;
+    font-size: 29px;
+    margin-top: 9px;
+    margin-bottom: 0px;
+}
+
+.mtop_2 { margin-top: 2px; }
+.area_touch { display: inline-block; padding: 5px; }
+.r_ico span:before { vertical-align: middle; font-size: 14px;  }
+.icon_animate { padding-left: 5px; display: none; opacity: 0; -webkit-transition: all 0.25s linear; transition: all 0.25s linear; }
+.hidden_nav { display: block !important; }
+.visualhidden { opacity: 1 !important; }
+/*********/
+
+/*Navigation*/
+.p_title { color: #5b5d5f; padding: 8px 13px 8px 25px;  font-weight: bold; }
+.p_title label { padding: 5px 0; margin-bottom: 0; }
+.p_title a { color: #5b5d5f; display: inline-block; }
+.p_title a:active { opacity: 0.7; }
+.navbar-top-links .custom-pic.profile-avatar { padding: 5px 10px; }
+/************/
+
+.nav-dropdown-menu
+{
+    list-style-type: none;
+    padding: 0px 0px;
+}
+
+.nav-dropdown-menu li { display: inline; 
+                        padding: 0px 0px;
+}
+
+.nav-dropdown-menu > li > a {
+    color: #a7b1c2;    
+    padding: 0px 0px;
+}
+
+.in-line-input
+{
+    width: 100%;
+    border: none;
+}
+
+
+@media (min-width: 1200px) { /* lg */
+    .team-members-block
+    {
+        text-align:right;
+    }
+}
+
+@media (max-width: 1200px) {
+    .team-members-block {
+        text-align:left;
+    }
+	.team-members-block .team-members {
+		display: table;
+	}
+}}
+
+/* Style should go here */
+
+/*--------------- Tai fix style ----------------*/
+.clr {
+	clear:both;
+}
+/*----- Navigation */
+.breadcrumb>li+li:before {
+	display: none;
+}
+/*.breadcrumb>li+li:before {
+	padding: 0 10px;
+    color: #ccc;
+    content: "/\00a0";
+}*/
+.breadcrumb>li i {
+	font-size: 0.9em;
+	padding-right: 5px
+}
+.breadcrumb>li+li {
+	margin-left: 18px;
+}
+.breadcrumb li a span {
+	font-size: 1.1em;
+	display: table;
+	vertical-align: middle;
+	color: #333;
+	padding-bottom: 7px;
+	border-bottom: 2px solid #fff;
+	transition: .3s all ease;
+	-moz-transition: .3s all ease;
+	-webkit-transition: .3s all ease;
+}
+.breadcrumb li a span i {
+	color: #ccc;
+}
+.breadcrumb li a:hover span {
+	color: #b3211a;
+}
+.breadcrumb li a span.active, .breadcrumb li a span.active i {
+	color: #b3211a !important;
+	font-weight: 500;
+}
+
+.breadcrumb .active, .breadcrumb .active i {
+	color: #b3211a !important;
+	font-weight: 500;
+}
+
+.m-b-lg .show-tt-form {
+	width: 96%;
+	margin-left: 11px;
+}
+.show-tm-on-form {
+	font-weight: 500;
+}
+.form-vthumb-left table tbody tr td {
+	vertical-align: middle;
+}
+.il-ip-text-form-left {
+	outline: none;
+	border: 1px solid #fff !important;
+	font-size: 1.1em;
+}
+.il-ip-text-form-left:focus, .il-ip-text-form-left:hover {
+	border: 1px solid #1ab394 !important;
+}
+.close-ib-right {
+	position: relative;
+	top: -10px;
+	right: -5px;
+}
+.fix-dt-top-pj-form {
+	margin-bottom: 1px;
+	min-height: 55px !important;
+}
+
+/*----- Nav on top prọ */
+.text-lock-unlock {
+	font-size: 0.5em !important;
+	color: #aaa;
+}
+.text-lock-unlock i span {
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+div[ng-controller="ProjectHeaderCtrl"] div > h2 {
+	text-transform: capitalize !important;
+}
+
+/** Team Member Block */
+.team-members-block .team-members {
+	
+}
+
+.team-members-block .team-members a span {
+	width: 30px;
+	height: 30px;
+	display: inline-table;
+}
+.team-members-block .team-members a {
+	float: left;
+}
+.team-members-block .team-members a.ava-mem-block {
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+	border: 1px dashed #ccc;
+	overflow: hidden;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+.team-members-block .team-members a.ava-mem-block:first-child {
+	margin-left: 0;
+}
+.team-members-block .team-members a[ng-repeat="member in Members"] {
+	border: none !important;
+}
+.team-members-block .team-members a span[ng-show="member.Client.User.Photo == null"]{
+	background: #eee;
+}
+.team-members-block .team-members a.ava-mem-block img {
+	margin-bottom: 0 !important;
+}
+.team-members-block .team-members {
+	height: 30px;
+	margin: 15px 0 12px 0 !important;
+}
+.team-members-block .text-info {
+	margin-bottom: 0 !important;
+}
+
+/** Team Member Block Bigger */
+
+.team-members-block-bigger .team-members {
+	
+}
+
+.team-members-block-bigger .team-members a span {
+	width: 40px;
+	height: 40px;
+	display: inline-table;
+}
+.team-members-block-bigger .team-members a {
+	float: left;
+}
+.team-members-block-bigger .team-members a.ava-mem-block {
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+	border: 1px dashed #ccc;
+	overflow: hidden;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+.team-members-block-bigger .team-members a.ava-mem-block:first-child {
+	margin-left: 0;
+}
+.team-members-block-bigger .team-members a[ng-repeat="member in Members"] {
+	border: none !important;
+}
+.team-members-block-bigger .team-members a span[ng-show="member.Client.User.Photo == null"]{
+	background: #eee;
+}
+.team-members-block-bigger .team-members a.ava-mem-block img {
+	margin-bottom: 0 !important;
+}
+.team-members-block-bigger .team-members {
+	height: 40px;
+	margin: 15px 0 12px 0 !important;
+}
+.team-members-block-bigger .text-info {
+	margin-bottom: 0 !important;
+}
+
+.dl-horizontal dt {
+    text-align: left;
+}
+
+/*  Semester Flow-diagram */
+
+.semester-block {
+    padding: 6px; 
+    border: solid 1px white; 
+    cursor: pointer;
+}
+
+.stroke-6 {
+    stroke: green;
+    stroke-dasharray: 3 2;
+    animation: dash6 5s linear;
+}
+
+.stroke-7 {
+    stroke: orange;
+    stroke-dasharray: 3 2;
+    animation: dash7 3s linear;
+}
+
+.stroke-8 {
+    stroke: orangered;
+    stroke-dasharray: 3 2;
+    stroke-width: 2;
+}
+
+.stroke-9 {
+    stroke: orangered;
+    stroke-dasharray: 3 2;
+    animation: dash7 3s linear;
+}
+
+@keyframes dash6 {
+    to {
+    stroke-dashoffset: -100;
+    }
+}
+
+@keyframes dash7 {
+    to {
+    stroke-dashoffset: -300;
+    }
+}
